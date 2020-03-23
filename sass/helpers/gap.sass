@@ -1,0 +1,89 @@
+@import '../variables'
+
+.helper
+
+  &--has-no-gap
+    padding: $zero !important // sass-lint:disable-line no-important
+
+  &--has-gap
+    padding: $gap-regular !important // sass-lint:disable-line no-important
+
+    &-left
+      padding-left: $gap-regular !important // sass-lint:disable-line no-important
+
+    &-right
+      padding-right: $gap-regular !important // sass-lint:disable-line no-important
+
+    &-top
+      padding-top: $gap-regular !important // sass-lint:disable-line no-important
+
+    &-bottom
+      padding-bottom: $gap-regular !important // sass-lint:disable-line no-important
+
+    &-vertical
+      padding-bottom: $gap-regular !important // sass-lint:disable-line no-important
+      padding-top: $gap-regular !important // sass-lint:disable-line no-important
+
+    &-horizontal
+      padding-left: $gap-regular !important // sass-lint:disable-line no-important
+      padding-right: $gap-regular !important // sass-lint:disable-line no-important
+
+  +for-size(tablet)
+    &--has-no-gap-tablet
+      padding: $zero !important // sass-lint:disable-line no-important
+
+    &--has-gap-tablet
+      padding: $gap-regular !important // sass-lint:disable-line no-important
+
+    &--has-gap
+      padding: $gap-regular !important // sass-lint:disable-line no-important
+
+      &-left-tablet
+        padding-left: $gap-regular !important // sass-lint:disable-line no-important
+
+      &-right-tablet
+        padding-right: $gap-regular !important // sass-lint:disable-line no-important
+
+      &-top-tablet
+        padding-top: $gap-regular !important // sass-lint:disable-line no-important
+
+      &-bottom-tablet
+        padding-bottom: $gap-regular !important // sass-lint:disable-line no-important
+
+      &-vertical-tablet
+        padding-bottom: $gap-regular !important // sass-lint:disable-line no-important
+        padding-top: $gap-regular !important // sass-lint:disable-line no-important
+
+      &-horizontal-tablet
+        padding-left: $gap-regular !important // sass-lint:disable-line no-important
+        padding-right: $gap-regular !important // sass-lint:disable-line no-important
+
+  +for-size(mobile)
+    &--has-no-gap-mobile
+      padding: $zero !important // sass-lint:disable-line no-important
+
+    &--has-gap-mobile
+      padding: $gap-regular !important // sass-lint:disable-line no-important
+
+    &--has-gap
+      padding: $gap-regular !important // sass-lint:disable-line no-important
+
+      &-left-mobile
+        padding-left: $gap-regular !important // sass-lint:disable-line no-important
+
+      &-right-mobile
+        padding-right: $gap-regular !important // sass-lint:disable-line no-important
+
+      &-top-mobile
+        padding-top: $gap-regular !important // sass-lint:disable-line no-important
+
+      &-bottom-mobile
+        padding-bottom: $gap-regular !important // sass-lint:disable-line no-important
+
+      &-vertical-mobile
+        padding-bottom: $gap-regular !important // sass-lint:disable-line no-important
+        padding-top: $gap-regular !important // sass-lint:disable-line no-important
+
+      &-horizontal-mobile
+        padding-left: $gap-regular !important // sass-lint:disable-line no-important
+        padding-right: $gap-regular !important // sass-lint:disable-line no-important

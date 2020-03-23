@@ -1,0 +1,47 @@
+{
+  "name": "@madeiramadeira/cavilha",
+  "version": "1.0.0",
+  "description": "Cavilha is an UI KIT of components with MadeiraMadeira brand",
+  "private": false,
+  "scripts": {
+    "sass-build-autoprefix": "postcss --use autoprefixer --map false --output dist/cavilha.css dist/cavilha.css",
+    "sass-build-cleancss": "cleancss -o dist/cavilha.min.css dist/cavilha.css",
+    "sass-build-clean": "rimraf css",
+    "sass-build-sass": "node-sass --output-style expanded --source-map true cavilha.sass dist/cavilha.css",
+    "deploy": "npm run sass-build-clean && npm run sass-build-sass && npm run sass-build-autoprefix && npm run sass-build-cleancss && gulp",
+    "start": "npm run sass-build-sass -- --watch",
+    "linter": "sass-lint -c .sass-lint.yml 'sass/**/*.sass' -v -q",
+    "icons": "gulp"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.7.4",
+    "clean-css-cli": "^4.3.0",
+    "css-loader": "^3.4.2",
+    "gulp": "^4.0.2",
+    "node-sass": "^4.13.1",
+    "postcss-cli": "^7.1.0",
+    "rimraf": "^3.0.2",
+    "sass-lint": "^1.13.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/williamnvk/cavilha.git"
+  },
+  "keywords": [
+    "sass",
+    "css",
+    "html",
+    "ui"
+  ],
+  "author": "William Novak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/williamnvk/cavilha/issues"
+  },
+  "homepage": "https://github.com/williamnvk/cavilha#readme",
+  "dependencies": {},
+  "files": [
+    "dist",
+    "sass/**/*.sass"
+  ]
+}
