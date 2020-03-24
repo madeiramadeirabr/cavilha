@@ -4,19 +4,21 @@
   "description": "Cavilha is an UI KIT of components with MadeiraMadeira brand",
   "private": false,
   "scripts": {
-    "sass-build-autoprefix": "postcss --use autoprefixer --map false --output dist/cavilha.css dist/cavilha.css",
+    "sass-build-autoprefix": "postcss --use=autoprefixer --map false --output dist/cavilha.css dist/cavilha.css",
     "sass-build-cleancss": "cleancss -o dist/cavilha.min.css dist/cavilha.css",
     "sass-build-clean": "rimraf css",
-    "sass-build-sass": "node-sass --output-style expanded --source-map true cavilha.sass dist/cavilha.css",
+    "sass-build-sass": "node-sass --output-style expanded cavilha.sass dist/cavilha.css",
     "deploy": "npm run sass-build-clean && npm run sass-build-sass && npm run sass-build-autoprefix && npm run sass-build-cleancss && gulp",
     "start": "npm run sass-build-sass -- --watch",
     "linter": "sass-lint -c .sass-lint.yml 'sass/**/*.sass' -v -q",
-    "icons": "gulp"
+    "icons": "gulp",
+    "watch:sass": "node-sass --watch cavilha.sass -o dist"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.4",
     "clean-css-cli": "^4.3.0",
     "css-loader": "^3.4.2",
+    "cssnano": "^4.1.10",
     "eslint": "^6.8.0",
     "gulp": "^4.0.2",
     "node-sass": "^4.13.1",
@@ -44,5 +46,12 @@
   "files": [
     "dist",
     "sass/**/*.sass"
+  ],
+  "browserslist": [
+    "last 2 versions",
+    "Safari >= 10",
+    "iOS >= 10",
+    "not ie <= 10",
+    "> 1%"
   ]
 }

@@ -7,6 +7,16 @@
 =border-box
   box-sizing: border-box !important // sass-lint:disable-line no-important
 
+=flex-row
+  display: flex
+  flex-direction: row
+
+=text-button
+  font-size: $text-button-size
+  font-weight: $text-button-weight
+  letter-spacing: $text-button-letter-spacing
+  line-height: $text-button-line-height
+
 =flex-center($direction)
   align-content: center
   align-items: center
@@ -23,7 +33,7 @@
   user-select: none
 
 =box-shadow
-  box-shadow: $zero 2px 2px $color-shadow, $zero $zero 2px $color-shadow $color-shadow-light
+  box-shadow: $zero 2px 2px $color-shadow, $zero $zero 2px $color-shadow
 
 =box-shadow-large
   box-shadow: $zero 4px 8px $color-shadow-light
