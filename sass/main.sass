@@ -122,6 +122,28 @@ p
   max-width: 100%
   padding: $zero
 
+h1
+  font-size: $heading-one-desktop-size
+  font-weight: $weight-light
+  letter-spacing: $heading-one-desktop-letter-spacing
+  line-height: $heading-one-desktop-line-height
+
+  &.helper--is-hero
+    font-size: $heading-one-hero-desktop-size
+    letter-spacing: $heading-one-hero-desktop-letter-spacing
+    line-height: $heading-one-hero-desktop-line-height
+
+  +for-size(mobile)
+    font-size: $heading-one-mobile-size
+    letter-spacing: $heading-one-mobile-letter-spacing
+    line-height: $heading-one-mobile-line-height
+
+    &.helper--is-hero
+      font-size: $heading-one-hero-mobile-size
+      letter-spacing: $heading-one-hero-mobile-letter-spacing
+      line-height: $heading-one-hero-mobile-line-height
+
+
 p
   font-size: $text-body-one-regular-size
   font-weight: $text-body-one-regular-weight
