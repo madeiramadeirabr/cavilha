@@ -4,15 +4,14 @@
   "description": "Cavilha is an UI KIT of components with MadeiraMadeira brand",
   "private": false,
   "scripts": {
-    "sass-build-autoprefix": "postcss --use=autoprefixer --map false --output dist/cavilha.css dist/cavilha.css",
-    "sass-build-cleancss": "cleancss -o dist/cavilha.min.css dist/cavilha.css",
+    "sass-build-autoprefix": "postcss --use=autoprefixer --map false --output css/cavilha.css css/cavilha.css",
+    "sass-build-cleancss": "cleancss -o css/cavilha.min.css css/cavilha.css",
     "sass-build-clean": "rimraf css",
-    "sass-build-sass": "node-sass --output-style expanded cavilha.sass dist/cavilha.css",
+    "sass-build-sass": "node-sass --output-style expanded cavilha.sass css/cavilha.css",
     "deploy": "npm run sass-build-clean && npm run sass-build-sass && npm run sass-build-autoprefix && npm run sass-build-cleancss && gulp",
     "start": "npm run sass-build-sass -- --watch",
     "linter": "sass-lint -c .sass-lint.yml 'sass/**/*.sass' -v -q",
-    "icons": "gulp",
-    "watch:sass": "node-sass --watch cavilha.sass -o dist"
+    "watch": "node-sass --watch cavilha.sass -o dev"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.4",
@@ -44,7 +43,8 @@
   "homepage": "https://github.com/williamnvk/cavilha#readme",
   "dependencies": {},
   "files": [
-    "dist",
+    "css",
+    "cavilha.sass",
     "sass/**/*.sass"
   ],
   "browserslist": [
