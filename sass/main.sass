@@ -1,3 +1,5 @@
+@import './mixins'
+
 +placeholder
   opacity: $zero
   transition: $transition-low ease opacity
@@ -143,6 +145,39 @@ h1
       letter-spacing: $heading-one-hero-mobile-letter-spacing
       line-height: $heading-one-hero-mobile-line-height
 
+h2
+  font-size: $heading-two-desktop-size
+  font-weight: $weight-light
+  letter-spacing: $heading-two-desktop-letter-spacing
+  line-height: $heading-two-desktop-line-height
+
+  +for-size(mobile)
+    font-size: $heading-two-mobile-size
+    letter-spacing: $heading-two-mobile-letter-spacing
+    line-height: $heading-two-mobile-line-height
+
+h3
+  font-size: $heading-three-desktop-size
+  font-weight: $weight-light
+  letter-spacing: $heading-three-desktop-letter-spacing
+  line-height: $heading-three-desktop-line-height
+
+  +for-size(mobile)
+    font-size: $heading-three-mobile-size
+    letter-spacing: $heading-three-mobile-letter-spacing
+    line-height: $heading-three-mobile-line-height
+
+h4
+  font-size: $heading-four-size
+  font-weight: $weight-light
+  letter-spacing: $heading-four-letter-spacing
+  line-height: $heading-four-line-height
+
+h5
+  font-size: $heading-five-size
+  font-weight: $weight-light
+  letter-spacing: $heading-five-letter-spacing
+  line-height: $heading-five-line-height
 
 p
   font-size: $text-body-one-regular-size
