@@ -1,0 +1,20 @@
+.container
+  clear: both
+  padding: $zero
+
+  +for-size(mobile)
+    margin: $zero
+    width: $mobile-container-width
+
+  +for-size(tablet)
+    margin: $zero
+    width: $mobile-container-width
+
+  +for-size(desktop)
+    margin: $zero auto
+    max-width: $desktop-container-width
+    width: $desktop-container-width
+
+  &--is-full-width
+    max-width: 100vw !important // sass-lint:disable-line no-important
+    width: 100vw !important // sass-lint:disable-line no-important
