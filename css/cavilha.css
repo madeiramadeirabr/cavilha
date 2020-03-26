@@ -679,7 +679,7 @@ svg path:not([fill]) {
 
 .input-group input:focus,
 .input-group textarea:focus {
-  outline: none;
+  outline: none !important;
   border-color: #1b78cd !important;
   border-width: 2px;
 }
@@ -812,6 +812,70 @@ svg path:not([fill]) {
 .input-group--is-success svg {
   fill: #207f33;
   color: #207f33;
+}
+
+.grid--is-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.grid--has-content-start {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.grid--has-content-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.grid--has-content-end {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.grid--has-items-start {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.grid--has-items-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.grid--has-items-end {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.grid--has-self-align-start {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.grid--has-self-align-center {
+  -ms-flex-item-align: flex-center;
+      align-self: flex-center;
+}
+
+.grid--has-self-align-end {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.grid--has-no-wrap {
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
 
 .grid__row {
@@ -1547,6 +1611,126 @@ svg path:not([fill]) {
         -ms-flex: initial;
             flex: initial;
   }
+}
+
+.input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  position: relative;
+  width: 100%;
+}
+
+.input::after {
+  clear: both;
+  content: " ";
+  display: table;
+}
+
+.input:hover .input__marker {
+  background: #e6e6e6;
+}
+
+.input__marker {
+  background-color: #fff;
+  border: solid 2px #1b78cd;
+  border-radius: 50%;
+  height: 24px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 24px;
+}
+
+.input__marker:after {
+  content: " ";
+  display: none;
+  position: absolute;
+}
+
+.input.input__radio, .input.input__checkbox {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  display: block;
+  padding-left: 36px;
+  position: relative;
+}
+
+.input.input__radio input[type='checkbox'],
+.input.input__radio input[type='radio'], .input.input__checkbox input[type='checkbox'],
+.input.input__checkbox input[type='radio'] {
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+}
+
+.input.input__radio input[type='checkbox']:checked + .input__marker,
+.input.input__radio input[type='radio']:checked + .input__marker, .input.input__checkbox input[type='checkbox']:checked + .input__marker,
+.input.input__checkbox input[type='radio']:checked + .input__marker {
+  background-color: #fff;
+  border-color: #1b78cd;
+}
+
+.input.input__radio input[type='checkbox']:checked + .input__marker::after,
+.input.input__radio input[type='radio']:checked + .input__marker::after, .input.input__checkbox input[type='checkbox']:checked + .input__marker::after,
+.input.input__checkbox input[type='radio']:checked + .input__marker::after {
+  display: block;
+}
+
+.input.input__radio input[type='checkbox']:checked + .input__marker:hover,
+.input.input__radio input[type='radio']:checked + .input__marker:hover, .input.input__checkbox input[type='checkbox']:checked + .input__marker:hover,
+.input.input__checkbox input[type='radio']:checked + .input__marker:hover {
+  background-color: #e6e6e6;
+}
+
+.input.input__radio input[type='checkbox']:checked + .input__marker + .input__text,
+.input.input__radio input[type='radio']:checked + .input__marker + .input__text, .input.input__checkbox input[type='checkbox']:checked + .input__marker + .input__text,
+.input.input__checkbox input[type='radio']:checked + .input__marker + .input__text {
+  font-weight: 700;
+}
+
+.input.input__radio .input__marker::after, .input.input__checkbox .input__marker::after {
+  background: #1b78cd;
+  border-radius: 50%;
+  height: 8px;
+  left: 6px;
+  top: 6px;
+  width: 8px;
+}
+
+.input.input__radio:hover input[type='radio'] + .input__marker::after, .input.input__checkbox:hover input[type='radio'] + .input__marker::after {
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 0 2px #e6e6e6;
+          box-shadow: 0 0 0 2px #e6e6e6;
+  content: " ";
+}
+
+.input.input__checkbox .input__marker {
+  border-radius: 0;
+}
+
+.input.input__checkbox .input__marker::after {
+  background: #fff;
+  border: solid #1b78cd;
+  border-radius: 0;
+  border-width: 0 2px 2px 0;
+  height: 10px;
+  left: 7px;
+  top: 3px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  width: 5px;
 }
 
 .container {
