@@ -1,0 +1,129 @@
+@import '../../variables'
+@import '../../colors'
+@import '../../mixins'
+
+
+.input-group
+  $self: &
+  position: relative
+  margin: $size-regular $zero
+
+  input,
+  textarea
+    background-color: $color-white
+    border: solid 1px $color-gray-three
+    border-radius: $radius
+    font-size: 16px
+    font-style: normal
+    font-weight: $weight-regular
+    height: 40px
+    line-height: 24px
+    padding: 8px 12px
+    width: 100%
+
+    &:focus
+      outline: none
+      border-color: $color-secondary !important
+      border-width: 2px
+
+    &:focus + #{$self}__label + #{$self}__helper
+      color: $color-secondary
+
+    &:hover
+      background: $color-white
+      border-color: $color-gray-seven
+
+    &:focus + #{$self}__label,
+    &:valid + #{$self}__label
+      background-color: $color-white
+      color: $color-gray-five
+      font-size: 12px
+      left: 10px
+      line-height: 12px
+      padding: $zero 2px
+      top: -6px
+
+  textarea
+    height: auto
+
+  &__label
+    left: 12px
+    line-height: 24px
+    position: absolute
+    top: 8px
+    transition: all .2s
+
+  &__icon
+    top: 8px
+    position: absolute
+
+    svg
+      fill: $color-gray-five
+      color: $color-gray-five
+
+    &--is-right
+      right: 12px
+
+    &--is-left
+      left: 12px
+
+  &__helper
+    color: $color-gray-five
+    font-size: 12px
+    letter-spacing: .4px
+    line-height: 18px
+    margin-left: 12px
+
+  &--has-icon-left
+    input,
+    textarea
+      padding-left: 40px
+
+    #{$self}__label
+      left: 40px
+
+  &--is-danger
+    input,
+    textarea
+      border-color: $color-danger
+
+      &:focus,
+      &:hover
+        border-color: $color-danger !important
+
+      &:focus + #{$self}__label,
+      &:valid + #{$self}__label,
+      &:focus + #{$self}__label + #{$self}__helper,
+	      color: $color-danger
+
+    #{$self}__helper
+      color: $color-danger
+
+    svg
+      fill: $color-danger
+      color: $color-danger
+
+  &--is-success
+    input,
+    textarea
+      border-color: $color-success
+
+      &:focus,
+      &:hover
+        border-color: $color-success !important
+
+      &:focus + #{$self}__label,
+      &:valid + #{$self}__label,
+      &:focus + #{$self}__label + #{$self}__helper,
+	      color: $color-success
+
+    #{$self}__helper
+      color: $color-success
+
+    svg
+      fill: $color-success
+      color: $color-success
+
+
+
+
