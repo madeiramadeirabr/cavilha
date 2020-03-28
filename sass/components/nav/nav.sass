@@ -1,0 +1,34 @@
+@import '../../variables'
+@import '../../colors'
+@import '../../mixins'
+
+
+.nav
+  display: flex
+  list-style: none
+  overflow-x: scroll
+  scroll-direction: horizontal // sass-lint:disable-line no-misspelled-properties
+
+  +for-size(mobile)
+    padding: $size-small $zero
+
+  &__item
+    border-radius: $radius
+    color: $color-gray-six
+    display: block
+    flex: 1
+    font-size: $text-body-two-regular-size
+    font-weight: $text-body-two-regular-weight
+    letter-spacing: $text-body-two-regular-letter-spacing
+    line-height: $text-body-two-regular-line-height
+    padding: $size-small $size-regular
+    text-align: center
+
+    +for-size(mobile)
+      flex: none
+      min-width: 80px
+
+    &:hover
+      background-color: $color-primary
+      color: $color-white
+

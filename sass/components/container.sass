@@ -3,23 +3,27 @@
 
 
 .container
-  clear: both
   padding: $zero
   margin: $zero auto
 
   +for-size(mobile)
+    width: calc(100vw - #{$mobile-column-gap * 2})
+    margin: $zero $mobile-column-gap
 
-    width: $mobile-container-width
-    width: $mobile-container-width
+    &--is-full-width-mobile
+      width: 100vw
+      margin: $zero
 
   +for-size(tablet)
-    max-width: $tablet-container-width
     width: $tablet-container-width
 
+    &--is-full-width-tablet
+      width: 100vw
+      margin: $zero
+
   +for-size(desktop)
-    max-width: $desktop-container-width
     width: $desktop-container-width
 
-  &--is-full-width
-    max-width: 100vw !important // sass-lint:disable-line no-important
-    width: 100vw !important // sass-lint:disable-line no-important
+    &--is-full-width
+      width: 100vw
+      margin: $zero
