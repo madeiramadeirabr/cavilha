@@ -4,16 +4,26 @@
 @import '../../mixins'
 @import './variables'
 
-
-.buttons
-  +flex-row
+=buttons
   overflow-x: scroll
   padding: $size-extra-small $zero
   scroll-direction: horizontal // sass-lint:disable-line no-misspelled-properties
 
+.buttons
+  +flex-row
+
+  +for-size(mobile)
+    +buttons
+
+  +for-size(tablet)
+    +buttons
+
   .button
-    &:not(:last-child):not(.helper--is-full-width) // sass-lint:disable-line force-pseudo-nesting
+    min-width: 140px
+
+    &:not(:last-child) // sass-lint:disable-line force-pseudo-nesting
       margin-right: $size-regular
+
 
 .button
   $self: '.button'

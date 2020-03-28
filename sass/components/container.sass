@@ -1,17 +1,22 @@
+@import '../variables'
+@import '../mixins'
+
+
 .container
   clear: both
   padding: $zero
+  margin: $zero auto
 
   +for-size(mobile)
-    margin: $zero
+
+    width: $mobile-container-width
     width: $mobile-container-width
 
   +for-size(tablet)
-    margin: $zero
-    width: $mobile-container-width
+    max-width: $tablet-container-width
+    width: $tablet-container-width
 
   +for-size(desktop)
-    margin: $zero auto
     max-width: $desktop-container-width
     width: $desktop-container-width
 

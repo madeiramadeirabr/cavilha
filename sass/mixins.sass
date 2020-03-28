@@ -42,16 +42,16 @@
 =for-size($range)
   $phone: 600px
   $tablet: 1024px
-  $desktop: 1800px
+  $desktop: $tablet + 1px
 
   @if $range == mobile
-    @media (max-width: #{$phone - 1})
+    @media (max-width: $phone)
       @content
   @else if $range == tablet
-    @media (min-width: $phone) and (max-width: #{$tablet - 1})
+    @media (min-width: #{$phone + 1}) and (max-width: $tablet)
       @content
   @else if $range == desktop
-    @media (min-width: #{$tablet + 1})
+    @media (min-width: $desktop)
       @content
 
 
