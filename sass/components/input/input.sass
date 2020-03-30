@@ -6,17 +6,17 @@ $input-el: '.input'
 
 .input
   +clearfix
-  display: flex
-  flex-direction: row
-  font-size: 16px
-  font-weight: $weight-regular
-  line-height: 24px
   position: relative
   width: 100%
 
   &:hover
     #{$input-el}__marker
       background: $color-gray-two
+
+  &__text
+    font-size: 16px
+    font-weight: $weight-regular
+    line-height: 24px
 
   &__marker
     background-color: $color-white
@@ -91,3 +91,67 @@ $input-el: '.input'
         top: 3px
         transform: rotate(45deg)
         width: 5px
+
+
+
+
+// $radioSize: 22px;
+// $radioBorder: #D1D7E3;
+// $radioActive: #5D9BFB;
+
+// .radio
+//   display: block;
+//   cursor: pointer;
+
+//   input
+//     display: none;
+
+//     & +
+//       padding-left: $radioSize;
+//       display: block;
+//       position: relative;
+
+//       &:not(:empty)
+//         padding-left: $radioSize + 8;
+
+//       &:before,
+//       &:after
+//         content: '';
+//         width: $radioSize;
+//         height: $radioSize;
+//         display: block;
+//         border-radius: 50%;
+//         left: 0;
+//         top: 50%;
+//         position: absolute;
+
+//       &:before
+//         background: $radioBorder;
+//         transition: background .2s ease, transform .4s cubic-bezier(.175, .885, .32, 2);
+
+//       &:after
+//         background: #fff;
+//         transform: scale(.78);
+//         transition: transform .6s cubic-bezier(.175, .885, .32, 1.4);
+
+//     &:checked + div
+//       &:before
+//         transform: scale(1.04);
+//         background: $radioActive;
+
+//       &:after
+//         transform: scale(.4);
+//         transition: transform .3s ease;
+
+//   &:hover
+//     input
+//       & + div
+//         &:before
+//           transform: scale(.92);
+
+//         &:after
+//           transform: scale(.74);
+
+//       &:checked + div
+//         &:after
+//           transform: scale(.4);

@@ -10,6 +10,22 @@
   flex-wrap: wrap
   padding: $zero
 
+  +for-size(mobile)
+    &--has-horizontal-scroll-mobile
+      overflow-y: hidden
+      overflow-x: auto
+      scroll-behavior: smooth
+      flex-flow: row
+      flex-wrap: nowrap
+      -webkit-overflow-scrolling: touch
+      padding: $size-small $zero
+
+      &::-webkit-scrollbar
+        display: none
+
+      .grid__column
+        flex: 0 0 auto
+
   &--is-reverse
     flex-direction: row-reverse
 

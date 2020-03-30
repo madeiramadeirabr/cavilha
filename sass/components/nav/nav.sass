@@ -4,10 +4,10 @@
 
 
 .nav
+  $self: &
   display: flex
   list-style: none
-  overflow-x: scroll
-  scroll-direction: horizontal // sass-lint:disable-line no-misspelled-properties
+  overflow-x: auto
 
   +for-size(mobile)
     padding: $size-small $zero
@@ -28,7 +28,17 @@
       flex: none
       min-width: 80px
 
+    &--is-active,
     &:hover
       background-color: $color-primary
       color: $color-white
 
+
+  &#{$self}--is-inverted
+    #{$self}__item
+      color: $color-white
+
+      &--is-active,
+      &:hover
+        background-color: $color-white
+        color: $color-gray-seven

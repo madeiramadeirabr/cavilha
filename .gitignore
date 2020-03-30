@@ -12,5 +12,5 @@ yarn-debug.log*
 yarn-error.log*
 
 dev
-docs/william.html
+docs/test
 public/icons

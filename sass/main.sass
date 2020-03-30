@@ -1,4 +1,7 @@
+// font-family: $family-sans-serif
+
 @import './mixins'
+@import './colors'
 
 +placeholder
   opacity: $zero
@@ -47,7 +50,7 @@ pre
 body
   background-color: $color-gray-one
   color: $color-text
-  font-family: $family-sans-serif !important // sass-lint:disable-line no-important
+  font-family: serif
   font-size: $text-body-one-regular-size
   font-weight: $text-body-one-regular-weight
   letter-spacing: $text-body-one-regular-letter-spacing
@@ -77,7 +80,6 @@ a
 hr
   +clearfix
   border-width: $zero
-  display: block
   height: 1px
   width: 100%
 
@@ -132,61 +134,72 @@ h1
   font-weight: $weight-light
   letter-spacing: $heading-one-desktop-letter-spacing
   line-height: $heading-one-desktop-line-height
+  min-height: $heading-one-desktop-line-height
 
   &.helper--is-hero
     font-size: $heading-one-hero-desktop-size
     letter-spacing: $heading-one-hero-desktop-letter-spacing
     line-height: $heading-one-hero-desktop-line-height
+    min-height: $heading-one-hero-desktop-line-height
 
   +for-size(mobile)
     font-size: $heading-one-mobile-size
     letter-spacing: $heading-one-mobile-letter-spacing
     line-height: $heading-one-mobile-line-height
+    min-height: $heading-one-mobile-line-height
 
     &.helper--is-hero
       font-size: $heading-one-hero-mobile-size
       letter-spacing: $heading-one-hero-mobile-letter-spacing
       line-height: $heading-one-hero-mobile-line-height
+      min-height: $heading-one-hero-mobile-line-height
 
 h2
   font-size: $heading-two-desktop-size
   font-weight: $weight-light
   letter-spacing: $heading-two-desktop-letter-spacing
   line-height: $heading-two-desktop-line-height
+  min-height: $heading-two-desktop-line-height
 
   +for-size(mobile)
     font-size: $heading-two-mobile-size
     letter-spacing: $heading-two-mobile-letter-spacing
     line-height: $heading-two-mobile-line-height
+    min-height: $heading-two-mobile-line-height
 
 h3
   font-size: $heading-three-desktop-size
   font-weight: $weight-light
   letter-spacing: $heading-three-desktop-letter-spacing
   line-height: $heading-three-desktop-line-height
+  min-height: $heading-three-desktop-line-height
 
   +for-size(mobile)
     font-size: $heading-three-mobile-size
     letter-spacing: $heading-three-mobile-letter-spacing
     line-height: $heading-three-mobile-line-height
+    min-height: $heading-three-mobile-line-height
 
 h4
   font-size: $heading-four-size
   font-weight: $weight-light
   letter-spacing: $heading-four-letter-spacing
   line-height: $heading-four-line-height
+  min-height: $heading-four-line-height
 
 h5
   font-size: $heading-five-size
   font-weight: $weight-light
   letter-spacing: $heading-five-letter-spacing
   line-height: $heading-five-line-height
+  min-height: $heading-five-line-height
 
 p
   font-size: $text-body-one-regular-size
   font-weight: $text-body-one-regular-weight
   letter-spacing: $text-body-one-regular-letter-spacing
   line-height: $text-body-one-regular-line-height
+  min-height: $text-body-one-regular-line-height
 
 pre
   +clearfix

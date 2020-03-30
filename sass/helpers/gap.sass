@@ -4,10 +4,10 @@
 
 .helper
 
-  &--has-no-size
+  &--has-no-gap
     padding: $zero !important // sass-lint:disable-line no-important
 
-  &--has-size
+  &--has-gap
     padding: $size-regular !important // sass-lint:disable-line no-important
 
     &-left
@@ -31,13 +31,13 @@
       padding-right: $size-regular !important // sass-lint:disable-line no-important
 
   +for-size(tablet)
-    &--has-no-size-tablet
+    &--has-no-gap-tablet
       padding: $zero !important // sass-lint:disable-line no-important
 
-    &--has-size-tablet
+    &--has-gap-tablet
       padding: $size-regular !important // sass-lint:disable-line no-important
 
-    &--has-size
+    &--has-gap
       padding: $size-regular !important // sass-lint:disable-line no-important
 
       &-left-tablet
@@ -61,13 +61,13 @@
         padding-right: $size-regular !important // sass-lint:disable-line no-important
 
   +for-size(mobile)
-    &--has-no-size-mobile
+    &--has-no-gap-mobile
       padding: $zero !important // sass-lint:disable-line no-important
 
-    &--has-size-mobile
+    &--has-gap-mobile
       padding: $size-regular !important // sass-lint:disable-line no-important
 
-    &--has-size
+    &--has-gap
       padding: $size-regular !important // sass-lint:disable-line no-important
 
       &-left-mobile

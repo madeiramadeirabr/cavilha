@@ -1,0 +1,25 @@
+@import '../../variables'
+@import '../../colors'
+@import '../../mixins'
+
+
+.card
+  background-color: $color-white
+  border-radius: $radius
+  +box-shadow-large
+  overflow: hidden
+
+  &--no-border-radius
+    border-radius: $zero
+
+  &__header
+
+  &__image
+    img
+      width: 100%
+
+  &__content
+    padding: $size-regular
+
+  &__footer
+    padding: $size-regular
