@@ -1,32 +1,73 @@
 @import '../../variables'
-@import '../../colors'
+
 @import '../../mixins'
 
 
 .nav
   $self: &
+  align-items: center
+  background: $color-white
   display: flex
-  list-style: none
-  overflow-x: auto
+  flex-direction: row
+  height: 82px
+
+  &--is-fixed-top
+    left: 0
+    position: fixed
+    top: 0
+    width: 100%
+    z-index: 1
+
+  &__logo
+    align-items: center
+    display: flex
+    height: 58px
+
+    img
+      width: 320px
+
+  &--is-narrow
+    height: 58px
+
+    #{$self}__logo
+      img
+        height: 42px
+        width: auto
 
   +for-size(mobile)
-    padding: $size-small $zero
+    height: 110px
+
+    &__logo
+      margin: $zero ($mobile-column-gap * 2)
+
+      img
+        height: 42px
+        width: auto
+
+    &__items
+      margin-left: $mobile-column-gap * 2
+
+  &__items
+    align-items: center
+    display: flex
+    flex-direction: row
+    overflow-x: auto
 
   &__item
     border-radius: $radius
     color: $color-gray-six
-    display: block
-    flex: 1
     font-size: $text-body-two-regular-size
     font-weight: $text-body-two-regular-weight
     letter-spacing: $text-body-two-regular-letter-spacing
     line-height: $text-body-two-regular-line-height
     padding: $size-small $size-regular
     text-align: center
+    transition: background-color $transition-low ease, color $transition-low ease
+    width: 100%
 
     +for-size(mobile)
       flex: none
-      min-width: 80px
+      max-width: 140px
 
     &--is-active,
     &:hover

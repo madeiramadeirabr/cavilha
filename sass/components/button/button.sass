@@ -1,13 +1,13 @@
-@import '../../colors'
+
 @import '../../variables'
 @import '../../utils'
 @import '../../mixins'
-@import './variables'
 
 =buttons
   overflow-x: scroll
   padding: $size-extra-small $zero
   scroll-direction: horizontal // sass-lint:disable-line no-misspelled-properties
+
 
 .buttons
   +flex-row
@@ -32,7 +32,7 @@
   background-position: center
   border: transparent solid $border-width
   border-radius: $radius
-  color: $color-gray-six
+  color: $color-text
   cursor: pointer
   float: left
   font-size: $text-button-size
@@ -65,10 +65,10 @@
       flex-basis: 100%
 
   &:hover
-    background: $color-gray-two
+    background: map-get($button-background-hovered-map, default)
 
   &:focus
-    background: $color-gray-three radial-gradient(circle, transparent 1%, $color-gray-two 1%) center / 15000%
+    background: map-get($button-background-focused-map, default) radial-gradient(circle, transparent 1%, map-get($button-background-focused-transition-map, default) 1%) center / 15000%
 
   &:active
     background-size: 100%
@@ -76,42 +76,42 @@
 
   &:disabled,
   &--is-disabled
-    color: $color-gray-four
+    color: map-get($button-color-disabled-map, default)
     cursor: default
     pointer-events: none
 
   &--is-outline
-    border-color: $color-gray-six
+    border-color: map-get($button-outlined-border-map, default)
     box-shadow: none !important
 
     &:hover,
     &:focus,
     &:active
-      border-color: $color-gray-six
+      border-color: map-get($button-outlined-border-map, default)
 
     &:disabled,
     &#{ $self }--is-disabled
-      border-color: $color-gray-four
-      color: $color-gray-four
+      border-color: map-get($button-outlined-border-disabled-map, default)
+      color: map-get($button-outlined-color-disabled-map, default)
 
   &--is-link
     color: $color-secondary
     text-decoration: underline
 
     &#{ $self }--is-disabled
-      color: $color-gray-four
+      color: map-get($button-outlined-color-disabled-map, default)
 
-  @each $color, $value in $button-color-default-map
+  @each $color, $value in $button-background-map
     &#{$self}--is-#{ $color }
       +box-shadow
       background-color: $value
-      color: map-get($button-color-text-map, $color)
+      color: map-get($button-color-map, $color)
 
       &:hover
-        background-color: map-get($button-color-hovered-map, $color)
+        background-color: map-get($button-background-hovered-map, $color)
 
       &:focus
-        background: map-get($button-color-focused-map, $color) radial-gradient(circle, transparent 1%, map-get($button-color-focused-transition-map, $color) 1%) center / 15000%
+        background: map-get($button-background-focused-map, $color) radial-gradient(circle, transparent 1%, map-get($button-background-focused-transition-map, $color) 1%) center / 15000%
 
       &:active
         background-size: 100%
@@ -120,20 +120,20 @@
 
       &:disabled,
       &#{ $self }--is-disabled
-        background-color: map-get($button-color-disabled-map, $color)
-        border-color: map-get($button-color-disabled-map, $color)
+        background-color: map-get($button-background-disabled-map, $color)
+        border-color: map-get($button-border-disabled-map, $color)
         box-shadow: none
 
       &#{ $self }--is-outline
         background-color: transparent
-        border-color: map-get($button-outlined-color-border-map, $color)
-        color: map-get($button-outlined-color-text-map, $color)
+        border-color: map-get($button-outlined-border-map, $color)
+        color: map-get($button-outlined-color-map, $color)
 
         &:hover
-          background-color: map-get($button-outlined-color-hovered-map, $color)
+          background-color: map-get($button-outlined-background-hovered-map, $color)
 
         &:disabled,
         &#{ $self }--is-disabled
           background-color: transparent
-          border-color: $color-gray-four
-          color: $color-gray-four
+          border-color: map-get($button-outlined-border-disabled-map, $color)
+          color: map-get($button-outlined-color-disabled-map, $color)

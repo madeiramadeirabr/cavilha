@@ -4,14 +4,14 @@
   "description": "Cavilha is an UI KIT of components with MadeiraMadeira brand",
   "private": false,
   "scripts": {
-    "sass-build-autoprefix": "postcss --use=autoprefixer --map false --output public/css/cavilha.css public/css/cavilha.css",
-    "sass-build-cleancss": "cleancss -o public/css/cavilha.min.css public/css/cavilha.css",
+    "sass-build-autoprefix": "postcss --use=autoprefixer --map false --output public/css/cavilha.css public/css/cavilha.css && postcss --use=autoprefixer --map false --output public/css/cavilha.dark.css public/css/cavilha.dark.css",
+    "sass-build-cleancss": "cleancss -o public/css/cavilha.min.css public/css/cavilha.css && cleancss -o public/css/cavilha.dark.min.css public/css/cavilha.dark.css",
     "sass-build-clean": "rimraf css",
-    "sass-build-sass": "node-sass --output-style expanded cavilha.sass public/css/cavilha.css",
+    "sass-build-sass": "node-sass --output-style expanded cavilha.sass public/css/cavilha.css && node-sass --output-style expanded cavilha.dark.sass public/css/cavilha.dark.css",
+    "sass-watch-sass:default": "node-sass --output-style expanded cavilha.dark.sass dev/cavilha.css",
     "deploy": "npm run sass-build-clean && npm run sass-build-sass && npm run sass-build-autoprefix && npm run sass-build-cleancss && gulp",
-    "start": "npm run sass-build-sass -- --watch",
-    "linter": "sass-lint -c .sass-lint.yml 'sass/**/*.sass' -v -q",
-    "watch": "node-sass --watch cavilha.sass -o dev"
+    "start": "npm run sass-watch-sass:default && npm run sass-watch-sass:default -- --watch",
+    "linter": "sass-lint -c .sass-lint.yml 'sass/**/*.sass' -v -q"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.13.0",

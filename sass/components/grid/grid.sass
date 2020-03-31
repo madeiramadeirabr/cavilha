@@ -45,27 +45,25 @@
     width: calc(100% + #{$mobile-column-gap * 2})
 
 .grid__column
-  +border-box
-  flex: 1
+  $column: &
+  flex: 1 0
   margin-left: $desktop-column-gap
   margin-right: $desktop-column-gap
 
   > .grid__row
     width: calc(100% + #{$desktop-column-gap * 2})
 
-  &--is-first
+  &#{$column}--is-first
     order: -1
 
-  &--is-last
+  &#{$column}--is-last
     order: 1
 
-  &--is-auto
-    flex: initial
-
-  @each $name, $count in $percentages
-    &--is-#{$name}
-      flex: 1 1 calc(#{$count} - #{$desktop-column-gap * 2})
-      width: calc(#{$count} - #{$desktop-column-gap * 2})
+  +for-size(desktop)
+    @each $name, $count in $percentages
+      &#{$column}--is-#{$name}
+        flex-basis: calc(#{$count} - #{$desktop-column-gap * 2})
+        width: calc(#{$count} - #{$desktop-column-gap * 2})
 
   +for-size(tablet)
     margin-left: $tablet-column-gap
@@ -80,12 +78,9 @@
     &--is-last
       order: 1
 
-    &--is-auto
-      flex: initial
-
     @each $name, $count in $percentages
-      &--is-#{$name}-tablet
-        flex: 1 1 $count
+      &#{$column}--is-#{$name}-tablet
+        flex-basis: calc(#{$count} - #{$tablet-column-gap * 2})
         width: calc(#{$count} - #{$tablet-column-gap * 2})
 
   +for-size(mobile)
@@ -93,7 +88,7 @@
     margin-right: $mobile-column-gap
 
     > .grid__row
-      width: 100%
+      width: calc(100% + #{$mobile-column-gap * 2})
 
     &--is-first
       order: -1
@@ -106,5 +101,5 @@
 
     @each $name, $count in $percentages
       &--is-#{$name}-mobile
-        flex: 1 1 calc(#{$count} - #{$mobile-column-gap * 2})
+        flex-basis: calc(#{$count} - #{$mobile-column-gap * 2})
         width: calc(#{$count} - #{$mobile-column-gap * 2})
