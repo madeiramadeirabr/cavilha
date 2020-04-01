@@ -1,10 +1,5 @@
-@import '../../variables'
-
-@import '../../mixins'
-
-
 .card
-  background-color: $color-white
+  background-color: $card-background
   border-radius: $radius
   +box-shadow-large
   overflow: hidden
@@ -14,12 +9,14 @@
 
   &__header
 
+
   &__image
     img
       width: 100%
 
   &__content
     padding: $size-regular
+    color: $color-text
 
   &__footer
     padding: $size-regular

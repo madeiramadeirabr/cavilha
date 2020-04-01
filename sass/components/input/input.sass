@@ -1,7 +1,3 @@
-@import '../../variables'
-
-@import '../../mixins'
-
 $input-el: '.input'
 
 .input
@@ -11,7 +7,7 @@ $input-el: '.input'
 
   &:hover
     #{$input-el}__marker
-      background: $color-gray-two
+      background: $input-marker-background-hovered
 
   &__text
     font-size: 16px
@@ -19,7 +15,7 @@ $input-el: '.input'
     line-height: 24px
 
   &__marker
-    background-color: $color-white
+    background-color: $input-marker-background
     border: solid 2px $color-secondary
     border-radius: 50%
     height: 24px
@@ -48,14 +44,14 @@ $input-el: '.input'
       position: absolute
 
       &:checked + #{$input-el}__marker
-        background-color: $color-white
+        background-color: $input-marker-background
         border-color: $color-secondary
 
         &::after // sass-lint:disable-line pseudo-element
           display: block
 
         &:hover
-          background-color: $color-gray-two
+          background-color: $input-marker-background-hovered
 
         &+ #{$input-el}__text
           font-weight: $weight-bold
@@ -74,7 +70,7 @@ $input-el: '.input'
         &+ #{$input-el}__marker
           &::after // sass-lint:disable-line pseudo-element force-pseudo-nesting
             border-radius: 50%
-            box-shadow: $zero $zero $zero 2px $color-gray-two
+            box-shadow: $zero $zero $zero 2px $input-marker-background
             content: $content
 
   &#{$input-el}__checkbox
@@ -82,7 +78,7 @@ $input-el: '.input'
       border-radius: $zero
 
       &::after // sass-lint:disable-line pseudo-element
-        background: $color-white
+        background: inherit
         border: solid $color-secondary
         border-radius: $zero
         border-width: $zero 2px 2px $zero
@@ -91,67 +87,3 @@ $input-el: '.input'
         top: 3px
         transform: rotate(45deg)
         width: 5px
-
-
-
-
-// $radioSize: 22px;
-// $radioBorder: #D1D7E3;
-// $radioActive: #5D9BFB;
-
-// .radio
-//   display: block;
-//   cursor: pointer;
-
-//   input
-//     display: none;
-
-//     & +
-//       padding-left: $radioSize;
-//       display: block;
-//       position: relative;
-
-//       &:not(:empty)
-//         padding-left: $radioSize + 8;
-
-//       &:before,
-//       &:after
-//         content: '';
-//         width: $radioSize;
-//         height: $radioSize;
-//         display: block;
-//         border-radius: 50%;
-//         left: 0;
-//         top: 50%;
-//         position: absolute;
-
-//       &:before
-//         background: $radioBorder;
-//         transition: background .2s ease, transform .4s cubic-bezier(.175, .885, .32, 2);
-
-//       &:after
-//         background: #fff;
-//         transform: scale(.78);
-//         transition: transform .6s cubic-bezier(.175, .885, .32, 1.4);
-
-//     &:checked + div
-//       &:before
-//         transform: scale(1.04);
-//         background: $radioActive;
-
-//       &:after
-//         transform: scale(.4);
-//         transition: transform .3s ease;
-
-//   &:hover
-//     input
-//       & + div
-//         &:before
-//           transform: scale(.92);
-
-//         &:after
-//           transform: scale(.74);
-
-//       &:checked + div
-//         &:after
-//           transform: scale(.4);

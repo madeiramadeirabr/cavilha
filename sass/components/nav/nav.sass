@@ -6,7 +6,7 @@
 .nav
   $self: &
   align-items: center
-  background: $color-white
+  background: $color-background
   display: flex
   flex-direction: row
   height: 82px
@@ -55,7 +55,7 @@
 
   &__item
     border-radius: $radius
-    color: $color-gray-six
+    color: $color-text
     font-size: $text-body-two-regular-size
     font-weight: $text-body-two-regular-weight
     letter-spacing: $text-body-two-regular-letter-spacing
@@ -77,9 +77,9 @@
 
   &#{$self}--is-inverted
     #{$self}__item
-      color: $color-white
+      color: $color-text
 
       &--is-active,
       &:hover
-        background-color: $color-white
-        color: $color-gray-seven
+        background-color: $color-background-hover
+        color: $color-text
