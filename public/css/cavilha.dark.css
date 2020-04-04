@@ -116,8 +116,8 @@ pre {
 }
 
 body {
-  background-color: #fff;
-  color: #333;
+  background-color: #000;
+  color: #fff;
   font-family: BlinkMacSystemFont, -apple-system, "Open Sans", sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -405,7 +405,7 @@ svg path:not([fill]) {
   border-radius: 4px;
   -webkit-box-shadow: none;
           box-shadow: none;
-  color: #333;
+  color: #fff;
   cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -508,11 +508,11 @@ svg path:not([fill]) {
 }
 
 .button--is-outline {
-  border-color: #808080;
+  border-color: #333;
 }
 
 .button--is-outline:hover, .button--is-outline:focus, .button--is-outline:active {
-  border-color: #808080;
+  border-color: #333;
 }
 
 .button--is-outline:disabled, .button--is-outline.button--is-disabled {
@@ -597,7 +597,7 @@ svg path:not([fill]) {
 
 .button.button--is-default.button--is-outline {
   background-color: transparent;
-  border-color: #808080;
+  border-color: #333;
   -webkit-box-shadow: none;
           box-shadow: none;
   color: #1f1f1f;
@@ -625,7 +625,7 @@ svg path:not([fill]) {
 }
 
 .button.button--is-primary {
-  background-color: #F66A26;
+  background-color: #888;
   -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12);
           box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12);
   color: #fff;
@@ -654,10 +654,10 @@ svg path:not([fill]) {
 
 .button.button--is-primary.button--is-outline {
   background-color: transparent;
-  border-color: #F66A26;
+  border-color: #888;
   -webkit-box-shadow: none;
           box-shadow: none;
-  color: #F66A26;
+  color: #888;
 }
 
 .button.button--is-primary.button--is-outline:hover {
@@ -973,7 +973,7 @@ svg path:not([fill]) {
 
 .input-group input,
 .input-group textarea {
-  background-color: #fff;
+  background-color: #333;
   border: solid 1px #999;
   border-radius: 4px;
   font-size: 16px;
@@ -1001,7 +1001,7 @@ svg path:not([fill]) {
 
 .input-group input:hover,
 .input-group textarea:hover {
-  background-color: #e6e6e6;
+  background-color: #1f1f1f;
   border-color: #ccc;
 }
 
@@ -1009,8 +1009,8 @@ svg path:not([fill]) {
 .input-group input:valid + .input-group__label,
 .input-group textarea:focus + .input-group__label,
 .input-group textarea:valid + .input-group__label {
-  background-color: #fff;
-  color: #333;
+  background-color: #333;
+  color: #fff;
   font-size: 12px;
   left: 10px;
   line-height: 12px;
@@ -1020,7 +1020,7 @@ svg path:not([fill]) {
 
 .input-group input:hover + .input-group__label,
 .input-group textarea:hover + .input-group__label {
-  background-color: #e6e6e6;
+  background-color: #1f1f1f;
 }
 
 .input-group textarea {
@@ -1028,7 +1028,7 @@ svg path:not([fill]) {
 }
 
 .input-group__label {
-  background-color: #fff;
+  background-color: #333;
   left: 12px;
   line-height: 24px;
   position: absolute;
@@ -1043,8 +1043,8 @@ svg path:not([fill]) {
 }
 
 .input-group__icon svg {
-  fill: #333;
-  color: #333;
+  fill: #fff;
+  color: #fff;
 }
 
 .input-group__icon--is-right {
@@ -1056,7 +1056,7 @@ svg path:not([fill]) {
 }
 
 .input-group__helper {
-  color: #333;
+  color: #fff;
   font-size: 12px;
   letter-spacing: .4px;
   line-height: 18px;
@@ -1530,7 +1530,7 @@ svg path:not([fill]) {
 }
 
 .input:hover .input__marker {
-  background: #e6e6e6;
+  background: #333;
 }
 
 .input__text {
@@ -1540,7 +1540,7 @@ svg path:not([fill]) {
 }
 
 .input__marker {
-  background-color: #fff;
+  background-color: #333;
   border: solid 2px #1b78cd;
   border-radius: 50%;
   height: 24px;
@@ -1579,7 +1579,7 @@ svg path:not([fill]) {
 .input.input__radio input[type='checkbox']:checked + .input__marker,
 .input.input__radio input[type='radio']:checked + .input__marker, .input.input__checkbox input[type='checkbox']:checked + .input__marker,
 .input.input__checkbox input[type='radio']:checked + .input__marker {
-  background-color: #fff;
+  background-color: #333;
   border-color: #1b78cd;
 }
 
@@ -1592,7 +1592,7 @@ svg path:not([fill]) {
 .input.input__radio input[type='checkbox']:checked + .input__marker:hover,
 .input.input__radio input[type='radio']:checked + .input__marker:hover, .input.input__checkbox input[type='checkbox']:checked + .input__marker:hover,
 .input.input__checkbox input[type='radio']:checked + .input__marker:hover {
-  background-color: #e6e6e6;
+  background-color: #333;
 }
 
 .input.input__radio input[type='checkbox']:checked + .input__marker + .input__text,
@@ -1612,8 +1612,8 @@ svg path:not([fill]) {
 
 .input.input__radio:hover input[type='radio'] + .input__marker::after, .input.input__checkbox:hover input[type='radio'] + .input__marker::after {
   border-radius: 50%;
-  -webkit-box-shadow: 0 0 0 2px #fff;
-          box-shadow: 0 0 0 2px #fff;
+  -webkit-box-shadow: 0 0 0 2px #333;
+          box-shadow: 0 0 0 2px #333;
   content: " ";
 }
 
@@ -1658,7 +1658,7 @@ svg path:not([fill]) {
 }
 
 .hero--is-primary {
-  background-color: #F66A26;
+  background-color: #888;
   color: #fff;
 }
 
@@ -1713,7 +1713,7 @@ svg path:not([fill]) {
 }
 
 .card {
-  background-color: #fff;
+  background-color: #333;
   border-radius: 4px;
   -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
@@ -1730,7 +1730,7 @@ svg path:not([fill]) {
 
 .card__content {
   padding: 12px;
-  color: #333;
+  color: #fff;
 }
 
 .card__footer {
@@ -1810,7 +1810,7 @@ svg path:not([fill]) {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #fff;
+  background: #000;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1884,7 +1884,7 @@ svg path:not([fill]) {
 
 .nav__item {
   border-radius: 4px;
-  color: #333;
+  color: #fff;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0;
@@ -1906,21 +1906,21 @@ svg path:not([fill]) {
 }
 
 .nav__item--is-active, .nav__item:hover {
-  background-color: #F66A26;
+  background-color: #888;
   color: #fff;
 }
 
 .nav.nav--is-inverted .nav__item {
-  color: #333;
+  color: #fff;
 }
 
 .nav.nav--is-inverted .nav__item--is-active, .nav.nav--is-inverted .nav__item:hover {
-  background-color: #e6e6e6;
-  color: #333;
+  background-color: #333;
+  color: #fff;
 }
 
 .helper--has-background-primary {
-  background-color: #F66A26 !important;
+  background-color: #888 !important;
 }
 
 .helper--has-background-primary-one {
@@ -2447,7 +2447,7 @@ svg path:not([fill]) {
 }
 
 .helper--has-text--has-color-primary {
-  color: #F66A26;
+  color: #888;
 }
 
 .helper--has-text--has-color-primary-one {
@@ -2558,4 +2558,4 @@ svg path:not([fill]) {
   color: #990b13;
 }
 
-/*# sourceMappingURL=cavilha.css.map */
+/*# sourceMappingURL=cavilha.dark.css.map */

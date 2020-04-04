@@ -1,8 +1,14 @@
+$button-size-extra-small: 24px
+$button-size-small: 32px
+$button-size-regular: 40px
+$button-size-large: 48px
+$button-size-extra-large: 60px
+
+
 =buttons
   overflow-x: scroll
   padding: $size-extra-small $zero
   scroll-direction: horizontal // sass-lint:disable-line no-misspelled-properties
-
 
 .buttons
   +flex-row
@@ -14,56 +20,75 @@
     +buttons
 
   .button
-    min-width: 140px
+    &:not(.button--is-square):not(.button--is-circle)
+      min-width: 140px
 
-    &:not(:last-child) // sass-lint:disable-line force-pseudo-nesting
-      margin-right: $size-regular
+      &:not(:last-child) // sass-lint:disable-line force-pseudo-nesting
+        margin-right: $size-regular
 
 
 .button
   $self: '.button'
-  +flex-center(row)
+  align-items: center
   background-color: transparent
   background-position: center
   border: transparent solid $border-width
   border-radius: $radius
+  box-shadow: none
   color: $color-text
   cursor: pointer
+  display: flex
   float: left
   font-size: $text-button-size
   font-weight: $text-button-weight
+  height: $button-size-regular
+  justify-content: center
   letter-spacing: $text-button-letter-spacing
   line-height: $text-button-line-height
   max-width: auto
-  outline: none
-  padding: $size-small $size-regular
-  transition: background $transition $easing, border-color $transition $easing, color $transition $easing, background $transition-click
+  outline: none !important
+  padding: $zero $size-regular
+  transition: border-color $transition $easing, color $transition $easing, background $transition-click $easing
   width: auto
 
-  &__icon
-    display: flex
-    justify-content: center
-    width: 28px
+  &:not(:only-child):not(:last-child)
+    margin-right: $size-regular
 
-    svg
-      path // sass-lint:disable-line nesting-depth
-        &:not([fill]) // sass-lint:disable-line nesting-depth
-          fill: currentColor
+  &--is-extra-small
+    height: $button-size-extra-small
 
-  &__text
-    flex: 1
-    flex-basis: 100%
+  &--is-small
+    height: $button-size-small
 
-  &--has-content-center
+  &--is-large
+    height: $button-size-large
+
+  &--is-extra-large
+    height: $button-size-extra-large
+
+  &--has-icon
+    +flex-center(row)
+
     #{$self}__text
-      flex: $zero
+      flex: 1
       flex-basis: 100%
+
+  svg
+    &:first-child
+      margin-right: $size-regular
+
+    &:last-child
+      margin-left: $size-regular
+
+    path // sass-lint:disable-line nesting-depth
+      &:not([fill]) // sass-lint:disable-line nesting-depth
+        fill: currentColor
 
   &:hover
     background: map-get($button-background-hovered-map, default)
 
   &:focus
-    background: map-get($button-background-focused-map, default) radial-gradient(circle, transparent 1%, map-get($button-background-focused-transition-map, default) 1%) center / 15000%
+    background: map-get($button-background-focused-start-map, default) radial-gradient(circle, transparent 1%, map-get($button-background-focused-end-map, default) 1%) center / 15000%
 
   &:active
     background-size: 100%
@@ -77,7 +102,6 @@
 
   &--is-outline
     border-color: map-get($button-outlined-border-map, default)
-    box-shadow: none !important
 
     &:hover,
     &:focus,
@@ -96,39 +120,80 @@
     &#{ $self }--is-disabled
       color: map-get($button-outlined-color-disabled-map, default)
 
+  &--is-square,
+  &--is-circle
+    max-width: auto
+    padding: $zero !important
+    width: $button-size-regular
+
+    &#{$self}--is-extra-small
+      height: $button-size-extra-small
+      width: $button-size-extra-small
+
+    &#{$self}--is-small
+      height: $button-size-small
+      width: $button-size-small
+
+    &#{$self}--is-large
+      height: $button-size-large
+      width: $button-size-large
+
+    &#{$self}--is-extra-large
+      height: $button-size-extra-large
+      width: $button-size-extra-large
+
+    svg
+      &:first-child
+        margin-right: $zero
+
+      &:last-child
+        margin-left: $zero
+
+  &--is-circle
+    border-radius: 50%
+
   @each $color, $value in $button-background-map
     &#{$self}--is-#{ $color }
-      +box-shadow
       background-color: $value
+      box-shadow: $button-shadow
       color: map-get($button-color-map, $color)
 
       &:hover
         background-color: map-get($button-background-hovered-map, $color)
 
       &:focus
-        background: map-get($button-background-focused-map, $color) radial-gradient(circle, transparent 1%, map-get($button-background-focused-transition-map, $color) 1%) center / 15000%
+        background: map-get($button-background-focused-start-map, $color) radial-gradient(circle, transparent 1%, map-get($button-background-focused-end-map, $color) 1%) center / 15000%
+        box-shadow: $button-shadow-actived
 
       &:active
         background-size: 100%
-        box-shadow: $zero 1px 1px $color-shadow-light, $zero 1px 1px $color-shadow
-        transition: background 0s
+        transition: background 0s, border 0s
 
       &:disabled,
       &#{ $self }--is-disabled
         background-color: map-get($button-background-disabled-map, $color)
         border-color: map-get($button-border-disabled-map, $color)
-        box-shadow: none
 
       &#{ $self }--is-outline
         background-color: transparent
         border-color: map-get($button-outlined-border-map, $color)
+        box-shadow: none
         color: map-get($button-outlined-color-map, $color)
 
         &:hover
           background-color: map-get($button-outlined-background-hovered-map, $color)
+
+        &:focus
+          background: map-get($button-outlined-background-focused-start-map, $color) radial-gradient(circle, transparent 1%, map-get($button-outlined-background-focused-end-map, $color) 1%) center / 15000%
+          color: map-get($button-outlined-color-focused-map, $color)
+
+        &:active
+          background-size: 100%
+          transition: background 0s, border 0s
 
         &:disabled,
         &#{ $self }--is-disabled
           background-color: transparent
           border-color: map-get($button-outlined-border-disabled-map, $color)
           color: map-get($button-outlined-color-disabled-map, $color)
+
