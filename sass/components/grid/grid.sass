@@ -90,14 +90,11 @@
     > .grid__row
       width: calc(100% + #{$mobile-column-gap * 2})
 
-    &--is-first
+    &--is-first-mobile
       order: -1
 
-    &--is-last
+    &--is-last-mobile
       order: 1
-
-    &--is-auto
-      flex: initial
 
     @each $name, $count in $percentages
       &--is-#{$name}-mobile

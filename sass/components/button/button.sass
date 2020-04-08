@@ -30,6 +30,7 @@ $button-size-extra-large: 60px
 .button
   $self: '.button'
   align-items: center
+  appearance: none
   background-color: transparent
   background-position: center
   border: transparent solid $border-width
@@ -49,6 +50,7 @@ $button-size-extra-large: 60px
   outline: none !important
   padding: $zero $size-regular
   transition: border-color $transition $easing, color $transition $easing, background $transition-click $easing
+  white-space: nowrap
   width: auto
 
   &:not(:only-child):not(:last-child)
