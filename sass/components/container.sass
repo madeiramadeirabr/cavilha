@@ -3,6 +3,7 @@
 
 
 .container
+  $self: &
   padding: $zero
   margin: $zero auto
 
@@ -10,20 +11,20 @@
     width: calc(100vw - #{$mobile-column-gap * 2})
     margin: $zero $mobile-column-gap
 
-    &--is-full-width-mobile
+    &#{$self}--is-full-width-mobile
       width: 100vw
       margin: $zero
 
   +for-size(tablet)
     width: $tablet-container-width
 
-    &--is-full-width-tablet
+    &#{$self}--is-full-width-tablet
       width: 100vw
       margin: $zero
 
   +for-size(desktop)
     width: $desktop-container-width
 
-    &--is-full-width
+    &#{$self}--is-full-width
       width: 100vw
       margin: $zero

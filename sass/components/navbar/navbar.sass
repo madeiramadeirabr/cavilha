@@ -1,5 +1,4 @@
 @import '../../variables'
-
 @import '../../mixins'
 
 
@@ -11,14 +10,14 @@
   flex-direction: row
   height: 82px
 
-  &--is-fixed-top
+  &#{$self}--is-fixed-top
     left: 0
     position: fixed
     top: 0
     width: 100%
     z-index: 1
 
-  &__logo
+  #{$self}__logo
     align-items: center
     display: flex
     height: 58px
@@ -26,7 +25,7 @@
     img
       width: 320px
 
-  &--is-narrow
+  &#{$self}--is-narrow
     height: 58px
 
     #{$self}__logo
@@ -37,49 +36,50 @@
   +for-size(mobile)
     height: 110px
 
-    &__logo
+    #{$self}__logo
       margin: $zero ($mobile-column-gap * 2)
 
       img
         height: 42px
         width: auto
 
-    &__items
+    #{$self}__items
       margin-left: $mobile-column-gap * 2
 
-  &__items
+  #{$self}__items
     align-items: center
     display: flex
     flex-direction: row
     overflow-x: auto
 
-  &__item
-    border-radius: $radius
-    color: $color-text
-    font-size: $text-body-two-regular-size
-    font-weight: $text-body-two-regular-weight
-    letter-spacing: $text-body-two-regular-letter-spacing
-    line-height: $text-body-two-regular-line-height
-    padding: $size-small $size-regular
-    text-align: center
-    transition: background-color $transition-low ease, color $transition-low ease
-    width: 100%
-
-    +for-size(mobile)
-      flex: none
-      max-width: 140px
-
-    &--is-active,
-    &:hover
-      background-color: $color-primary
-      color: $color-white
-
-
-  &#{$self}--is-inverted
     #{$self}__item
+      $item: #{$self + '__item'}
+      border-radius: $radius
       color: $color-text
+      font-size: $text-body-two-regular-size
+      font-weight: $text-body-two-regular-weight
+      letter-spacing: $text-body-two-regular-letter-spacing
+      line-height: $text-body-two-regular-line-height
+      padding: $size-small $size-regular
+      text-align: center
+      transition: background-color $transition-low ease, color $transition-low ease
+      width: 100%
 
-      &--is-active,
+      +for-size(mobile)
+        flex: none
+        max-width: 140px
+
+      &#{$item}--is-active,
       &:hover
-        background-color: $color-background-hover
+        background-color: $color-primary
+        color: $color-white
+
+
+    &#{$self}--is-inverted
+      #{$self}__item
         color: $color-text
+
+        &--is-active,
+        &:hover
+          background-color: $color-background-hover
+          color: $color-text

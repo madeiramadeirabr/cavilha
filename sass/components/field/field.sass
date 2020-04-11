@@ -46,7 +46,7 @@
   textarea
     height: auto
 
-  &__label
+  #{$self}__label
     background-color: $field-label-background
     left: 12px
     line-height: 24px
@@ -54,7 +54,8 @@
     top: 8px
     transition: all .2s
 
-  &__icon
+  #{$self}__icon
+    $icon: &
     top: 8px
     position: absolute
 
@@ -62,20 +63,20 @@
       fill: $color-text
       color: $color-text
 
-    &--is-right
+    &#{$icon}--is-right
       right: 12px
 
-    &--is-left
+    &#{$icon}--is-left
       left: 12px
 
-  &__helper
+  #{$self}__helper
     color: $field-helper-color
     font-size: 12px
     letter-spacing: .4px
     line-height: 18px
     margin-left: 12px
 
-  &--has-icon-left
+  #{$self}--has-icon-left
     input,
     textarea
       padding-left: 40px
@@ -83,7 +84,7 @@
     #{$self}__label
       left: 40px
 
-  &--is-danger
+  #{$self}--is-danger
     input,
     textarea
       border-color: $color-danger
@@ -104,7 +105,7 @@
       fill: $color-danger
       color: $color-danger
 
-  &--is-success
+  #{$self}--is-success
     input,
     textarea
       border-color: $color-success

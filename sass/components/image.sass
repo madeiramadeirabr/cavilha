@@ -1,0 +1,54 @@
+.image
+  $self: &
+  overflow: hidden
+
+  img
+    height: auto
+    width: 100%
+
+  &#{$self}--is-cropped-extra-small
+    height: 80px
+
+  &#{$self}--is-cropped-small
+    height: 160px
+
+  &#{$self}--is-cropped
+    height: 240px
+
+  &#{$self}--is-cropped-large
+    height: 320px
+
+  &#{$self}--is-cropped-extra-large
+    height: 440px
+
+  +for-size(tablet)
+    &#{$self}--is-cropped-extra-small-tablet
+      height: 80px
+
+    &#{$self}--is-cropped-small-tablet
+      height: 160px
+
+    &#{$self}--is-cropped-tablet
+      height: 240px
+
+    &#{$self}--is-cropped-large-tablet
+      height: 320px
+
+    &#{$self}--is-cropped-extra-large-tablet
+      height: 440px
+
+  +for-size(mobile)
+    &#{$self}--is-cropped-extra-small-mobile
+      height: 80px
+
+    &#{$self}--is-cropped-small-mobile
+      height: 160px
+
+    &#{$self}--is-cropped-mobile
+      height: 240px
+
+    &#{$self}--is-cropped-large-mobile
+      height: 320px
+
+    &#{$self}--is-cropped-extra-large-mobile
+      height: 440px

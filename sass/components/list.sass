@@ -1,8 +1,9 @@
 .list
+  $self: &
   list-style: none
   margin: $zero
   padding: $zero
 
-  &--is-horizontal
+  &#{$self}--is-horizontal
     li
       display: inline-block

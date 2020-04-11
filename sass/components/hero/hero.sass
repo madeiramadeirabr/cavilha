@@ -3,24 +3,26 @@
 
 
 .hero
+  $self: &
   background-color: $color-gray-two
   border-radius: $radius
   height: 100vh
+  overflow: hidden
   padding: $size-extra-large
   width: 100%
 
-  &--has-no-radius
+  &#{$self}--has-no-radius
     border-radius: $zero
 
-  &--is-extra-small
+  &#{$self}--is-extra-small
     height: 180px
 
-  &--is-small
+  &#{$self}--is-small
     height: 240px
 
-  &--is-large
+  &#{$self}--is-large
     height: 400px
 
-  &--is-extra-large
+  &#{$self}--is-extra-large
     height: 600px
 

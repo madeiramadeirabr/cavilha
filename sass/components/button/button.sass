@@ -8,7 +8,6 @@ $button-size-extra-large: 60px
 =buttons
   overflow-x: scroll
   padding: $size-extra-small $zero
-  scroll-direction: horizontal // sass-lint:disable-line no-misspelled-properties
 
 .buttons
   +flex-row
@@ -56,19 +55,19 @@ $button-size-extra-large: 60px
   &:not(:only-child):not(:last-child)
     margin-right: $size-regular
 
-  &--is-extra-small
+  &#{$self}--is-extra-small
     height: $button-size-extra-small
 
-  &--is-small
+  &#{$self}--is-small
     height: $button-size-small
 
-  &--is-large
+  &#{$self}--is-large
     height: $button-size-large
 
-  &--is-extra-large
+  &#{$self}--is-extra-large
     height: $button-size-extra-large
 
-  &--has-icon
+  &#{$self}--has-icon
     +flex-center(row)
 
     #{$self}__text
@@ -97,12 +96,12 @@ $button-size-extra-large: 60px
     transition: background 0s, border 0s
 
   &:disabled,
-  &--is-disabled
+  &#{$self}--is-disabled
     color: map-get($button-color-disabled-map, default)
     cursor: default
     pointer-events: none
 
-  &--is-outline
+  &#{$self}--is-outline
     border-color: map-get($button-outlined-border-map, default)
 
     &:hover,
@@ -115,15 +114,15 @@ $button-size-extra-large: 60px
       border-color: map-get($button-outlined-border-disabled-map, default)
       color: map-get($button-outlined-color-disabled-map, default)
 
-  &--is-link
+  &#{$self}--is-link
     color: $color-secondary
     text-decoration: underline
 
     &#{ $self }--is-disabled
       color: map-get($button-outlined-color-disabled-map, default)
 
-  &--is-square,
-  &--is-circle
+  &#{$self}--is-square,
+  &#{$self}--is-circle
     max-width: auto
     padding: $zero !important
     width: $button-size-regular
@@ -151,7 +150,7 @@ $button-size-extra-large: 60px
       &:last-child
         margin-left: $zero
 
-  &--is-circle
+  &#{$self}--is-circle
     border-radius: 50%
 
   @each $color, $value in $button-background-map

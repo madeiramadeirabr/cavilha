@@ -1,73 +1,21 @@
 .card
+  $self: &
   +box-shadow-large
   background-color: $card-background
   border-radius: $radius
   overflow: hidden
 
-  &--has-no-border-radius
+  &#{$self}--has-no-border-radius
     border-radius: $zero
 
-  &--has-no-shadow
+  &#{$self}--has-no-shadow
     box-shadow: none
 
-  &__header
+  #{$self}__header
     +clearfix
 
-  &__image
-    overflow: hidden
-
-    &--is-cropped-extra-small
-      height: 80px
-
-    &--is-cropped-small
-      height: 160px
-
-    &--is-cropped
-      height: 240px
-
-    &--is-cropped-large
-      height: 320px
-
-    &--is-cropped-extra-large
-      height: 440px
-
-    +for-size(tablet)
-      &--is-cropped-extra-small-tablet
-        height: 80px
-
-      &--is-cropped-small-tablet
-        height: 160px
-
-      &--is-cropped-tablet
-        height: 240px
-
-      &--is-cropped-large-tablet
-        height: 320px
-
-      &--is-cropped-extra-large-tablet
-        height: 440px
-
-    +for-size(mobile)
-      &--is-cropped-extra-small-mobile
-        height: 80px
-
-      &--is-cropped-small-mobile
-        height: 160px
-
-      &--is-cropped-mobile
-        height: 240px
-
-      &--is-cropped-large-mobile
-        height: 320px
-
-      &--is-cropped-extra-large-mobile
-        height: 440px
-
-    img
-      width: 100%
-
-  &__content
+  #{$self}__content
     padding: $size-regular
 
-  &__footer
+  #{$self}__footer
     padding: $size-regular

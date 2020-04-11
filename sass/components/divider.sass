@@ -2,20 +2,21 @@
 @import '../variables'
 
 .divider
+  $self: &
   background-color: $color-gray-three
   border: $zero
   clear: both
+  display: inline-block
   height: 1px
   width: 100%
-  display: inline-block
 
-  &.divider--is-large
+  &#{$self}--is-large
     height: 2px
 
-  &.divider--is-dashed
+  &#{$self}--is-dashed
     background-color: inherit !important // sass-lint:disable-line no-important
     border-top: dashed 1px $color-gray-three !important // sass-lint:disable-line no-important
     height: $zero !important // sass-lint:disable-line no-important
 
-    &.divider--is-large
+    &#{$self}--is-large
       border-top: dashed 2px $color-gray-three !important // sass-lint:disable-line no-important
