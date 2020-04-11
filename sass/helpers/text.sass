@@ -25,6 +25,9 @@
     &-right
       text-align: right
 
+    &-justify
+      text-align: justify
+
     +for-size(mobile)
       &-left-mobile
         text-align: left
@@ -35,8 +38,21 @@
       &-right-mobile
         text-align: right
 
-    &-justify
-      text-align: justify
+      &-justify-mobile
+        text-align: justify
+
+    +for-size(tablet)
+      &-left-tablet
+        text-align: left
+
+      &-center-tablet
+        text-align: center
+
+      &-right-tablet
+        text-align: right
+
+      &-justify-tablet
+        text-align: justify
 
     &-upper
       text-transform: uppercase
@@ -50,87 +66,99 @@
       text-overflow: ellipsis
       white-space: nowrap
 
-    &--has-color
-      &-primary
-        color: $color-primary
+  &--has-color
+    &-default
+      color: $color-text
 
-      &-primary-one
-        color: $color-primary-one
+    &-text
+      color: $color-text
 
-      &-primary-two
-        color: $color-primary-two
+    &-white
+      color: $color-white
 
-      &-primary-three
-        color: $color-primary-three
+    &-black
+      color: $color-black
 
-      &-primary-four
-        color: $color-primary-four
+    &-background
+      color: $color-background
 
-      &-secondary
-        color: $color-secondary
+    &-primary
+      color: $color-primary
 
-      &-secondary-one
-        color: $color-secondary-one
+    &-primary-one
+      color: $color-primary-one
 
-      &-secondary-two
-        color: $color-secondary-two
+    &-primary-two
+      color: $color-primary-two
 
-      &-secondary-three
-        color: $color-secondary-three
+    &-primary-three
+      color: $color-primary-three
 
-      &-secondary-four
-        color: $color-secondary-four
+    &-primary-four
+      color: $color-primary-four
 
-      &-white
-        color: $color-white
+    &-secondary
+      color: $color-secondary
 
-      &-gray-one
-        color: $color-gray-one
+    &-secondary-one
+      color: $color-secondary-one
 
-      &-gray-two
-        color: $color-gray-two
+    &-secondary-two
+      color: $color-secondary-two
 
-      &-gray-three
-        color: $color-gray-three
+    &-secondary-three
+      color: $color-secondary-three
 
-      &-gray-four
-        color: $color-gray-four
+    &-secondary-four
+      color: $color-secondary-four
 
-      &-gray-five
-        color: $color-gray-five
+    &-gray-one
+      color: $color-gray-one
 
-      &-gray-six
-        color: $color-gray-six
+    &-gray-two
+      color: $color-gray-two
 
-      &-gray-seven
-        color: $color-gray-seven
+    &-gray-three
+      color: $color-gray-three
 
-      &-success
-        color: $color-success
+    &-gray-four
+      color: $color-gray-four
 
-      &-success-one
-        color: $color-success-one
+    &-gray-five
+      color: $color-gray-five
 
-      &-success-two
-        color: $color-success-two
+    &-gray-six
+      color: $color-gray-six
 
-      &-success-three
-        color: $color-success-three
+    &-gray-seven
+      color: $color-gray-seven
 
-      &-success-four
-        color: $color-success-four
+    &-success
+      color: $color-success
 
-      &-danger
-        color: $color-danger
+    &-success-one
+      color: $color-success-one
 
-      &-danger-one
-        color: $color-danger-one
+    &-success-two
+      color: $color-success-two
 
-      &-danger-two
-        color: $color-danger-two
+    &-success-three
+      color: $color-success-three
 
-      &-danger-three
-        color: $color-danger-three
+    &-success-four
+      color: $color-success-four
 
-      &-danger-four
-        color: $color-danger-four
+    &-danger
+      color: $color-danger
+
+    &-danger-one
+      color: $color-danger-one
+
+    &-danger-two
+      color: $color-danger-two
+
+    &-danger-three
+      color: $color-danger-three
+
+    &-danger-four
+      color: $color-danger-four

@@ -1,6 +1,6 @@
 {
   "name": "@madeiramadeira/cavilha",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Cavilha is an UI KIT of components with MadeiraMadeira brand",
   "private": false,
   "scripts": {
@@ -29,7 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/williamnvk/cavilha.git"
+    "url": "git+https://github.com/madeiramadeirabr/cavilha.git"
   },
   "keywords": [
     "sass",
@@ -40,13 +40,15 @@
   "author": "William Novak",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/williamnvk/cavilha/issues"
+    "url": "https://github.com/madeiramadeirabr/cavilha/issues"
   },
-  "homepage": "https://github.com/williamnvk/cavilha#readme",
+  "homepage": "https://github.com/madeiramadeirabr/cavilha#readme",
   "files": [
-    "css",
+    "public",
+    "sass",
+    "README.md",
     "cavilha.sass",
-    "sass/**/*.sass"
+    "cavilha.dark.sass"
   ],
   "browserslist": [
     "last 2 versions",
