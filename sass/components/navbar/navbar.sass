@@ -1,56 +1,62 @@
 @import '../../variables'
 @import '../../mixins'
 
+$navbar-height: 60px
+$navbar-content-size: 36px
 
 .navbar
   $self: &
-  align-items: center
   background: $color-background
-  display: flex
-  flex-direction: row
-  height: 82px
+  padding: $size-regular $zero
+
+  +for-size(desktop)
+    .container--is-full-width
+      padding: $zero $desktop-column-gap
 
   &#{$self}--is-fixed-top
     left: 0
     position: fixed
     top: 0
-    width: 100%
+    width: 100vw
     z-index: 1
 
   #{$self}__logo
-    align-items: center
-    display: flex
-    height: 58px
+    height: $navbar-content-size
+    margin-left: $desktop-column-gap
+    margin-right: $desktop-column-gap
+
+    +for-size(tablet)
+      margin-left: $tablet-column-gap
+      margin-right: $tablet-column-gap
+
+    +for-size(mobile)
+      margin-left: $mobile-column-gap
+      margin-right: $mobile-column-gap
 
     img
-      width: 320px
-
-  &#{$self}--is-narrow
-    height: 58px
-
-    #{$self}__logo
-      img
-        height: 42px
-        width: auto
-
-  +for-size(mobile)
-    height: 110px
-
-    #{$self}__logo
-      margin: $zero ($mobile-column-gap * 2)
-
-      img
-        height: 42px
-        width: auto
-
-    #{$self}__items
-      margin-left: $mobile-column-gap * 2
+      width: auto
+      height: $navbar-content-size
 
   #{$self}__items
     align-items: center
     display: flex
     flex-direction: row
+    margin-left: $desktop-column-gap
+    margin-right: $desktop-column-gap
+    flex: 1 1 auto
+    height: $navbar-content-size
     overflow-x: auto
+
+    +for-size(tablet)
+      margin-left: $tablet-column-gap
+      margin-right: $tablet-column-gap
+
+    +for-size(mobile)
+      margin-left: $mobile-column-gap
+      margin-right: $mobile-column-gap
+      margin-top: $size-regular
+      flex-direction: column
+      height: 100%
 
     #{$self}__item
       $item: #{$self + '__item'}
@@ -65,21 +71,84 @@
       transition: background-color $transition-low ease, color $transition-low ease
       width: 100%
 
-      +for-size(mobile)
-        flex: none
-        max-width: 140px
-
       &#{$item}--is-active,
       &:hover
         background-color: $color-primary
         color: $color-white
 
+  #{$self}__menu
+    cursor: pointer
+    height: 100%
+    line-height: $navbar-content-size
+    width: $navbar-content-size
+    font-size: 22px
+    margin-left: $desktop-column-gap
+    margin-right: $desktop-column-gap
 
-    &#{$self}--is-inverted
-      #{$self}__item
-        color: $color-text
+    +for-size(tablet)
+      margin-left: $tablet-column-gap
+      margin-right: $tablet-column-gap
 
-        &--is-active,
-        &:hover
-          background-color: $color-background-hover
-          color: $color-text
+    +for-size(mobile)
+      margin-left: $mobile-column-gap
+      margin-right: $mobile-column-gap
+
+  #{$self}__sidebar
+    $sidebar: #{$self + '__sidebar'}
+    background-color: $color-background
+    height: calc(100vh - $navbar-height)
+    left: -#{$sidebar-width}
+    position: fixed
+    top: $navbar-height
+    transition: left $transition-medium $easing
+    width: $sidebar-width
+    z-index: 1
+
+    +for-size(mobile)
+      left: -80vw
+      width: 80vw
+
+    &#{$sidebar}--is-open
+      left: 0 !important
+      overflow-y: auto
+
+      #{$self}__close,
+      #{$self}__back
+        display: block
+
+    &#{$sidebar}--is-half
+      left: -50vw
+      width: 50vw
+
+    &#{$sidebar}--is-full-height
+      height: 100vh
+      top: $zero
+
+    &#{$sidebar}--is-full-width
+      left: -100vw
+      width: 100vw
+
+    #{$self}__close,
+    #{$self}__back
+      display: none
+      width: $navbar-content-size
+      font-size: 22px
+      cursor: pointer
+      padding: $size-regular
+      position: fixed
+      right: $size-regular
+      top: $size-regular
+      transition: all $transition-medium $easing
+
+      &#{$self}__close--is-bottom-center,
+      &#{$self}__back--is-bottom-center,
+        top: auto
+        left: calc(50% - #{$navbar-content-size / 2})
+        bottom: $size-regular
+
+    #{$self}__back
+      left: $size-regular
+      right: auto
+
+
+
