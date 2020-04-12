@@ -1828,12 +1828,47 @@ svg path:not([fill]) {
 
 .navbar {
   background: #000;
+}
+
+.navbar .navbar__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding: 12px 0;
 }
 
 @media (min-width: 1113px) {
-  .navbar .container--is-full-width {
+  .navbar .navbar__container {
+    margin-left: -12px;
+    margin-right: -12px;
+    width: calc(100% + 24px);
+  }
+  .navbar .navbar__container .container--is-full-width {
     padding: 0 12px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1112px) {
+  .navbar .navbar__container {
+    margin-left: -12px;
+    margin-right: -12px;
+    width: calc(100% + 24px);
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar .navbar__container {
+    margin-left: -8px;
+    margin-right: -8px;
+    width: calc(100% + 16px);
   }
 }
 

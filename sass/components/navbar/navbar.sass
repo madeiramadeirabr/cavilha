@@ -5,11 +5,31 @@
 .navbar
   $self: &
   background: $color-background
-  padding: $size-regular $zero
 
-  +for-size(desktop)
-    .container--is-full-width
-      padding: $zero $desktop-column-gap
+  #{$self}__container
+    display: flex
+    flex-direction: row
+    flex-flow: row wrap
+    flex-wrap: wrap
+    padding: $size-regular $zero
+
+    +for-size(desktop)
+      margin-left: -$desktop-column-gap
+      margin-right: -$desktop-column-gap
+      width: calc(100% + #{$desktop-column-gap * 2})
+
+      .container--is-full-width
+        padding: $zero $desktop-column-gap
+
+    +for-size(tablet)
+      margin-left: -$tablet-column-gap
+      margin-right: -$tablet-column-gap
+      width: calc(100% + #{$tablet-column-gap * 2})
+
+    +for-size(mobile)
+      margin-left: -$mobile-column-gap
+      margin-right: -$mobile-column-gap
+      width: calc(100% + #{$mobile-column-gap * 2})
 
   &#{$self}--is-fixed-top
     left: 0
