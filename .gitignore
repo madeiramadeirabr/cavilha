@@ -12,5 +12,4 @@ yarn-debug.log*
 yarn-error.log*
 
 dev
-docs/test
 public/icons

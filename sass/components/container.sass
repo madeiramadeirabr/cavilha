@@ -8,6 +8,16 @@
   padding: $zero
   height: 100%
 
+  &#{$self}--has-sidebar
+    display: flex
+    flex-direction: row
+    overflow: hidden
+
+    > main
+      flex: auto
+      height: 100%
+
+
   +for-size(mobile)
     margin: $zero $mobile-column-gap
     width: calc(100vw - #{$mobile-column-gap * 2})

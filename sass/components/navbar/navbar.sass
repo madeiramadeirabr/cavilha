@@ -1,8 +1,6 @@
 @import '../../variables'
 @import '../../mixins'
 
-$navbar-height: 60px
-$navbar-content-size: 36px
 
 .navbar
   $self: &
@@ -41,17 +39,16 @@ $navbar-content-size: 36px
     align-items: center
     display: flex
     flex-direction: row
-    margin-left: $desktop-column-gap
+    margin-left: auto
     margin-right: $desktop-column-gap
-    flex: 1 1 auto
+    flex: auto 1 auto
     height: $navbar-content-size
-    overflow-x: auto
 
     +for-size(tablet)
-      margin-left: $tablet-column-gap
       margin-right: $tablet-column-gap
 
     +for-size(mobile)
+      flex: 100%
       margin-left: $mobile-column-gap
       margin-right: $mobile-column-gap
       margin-top: $size-regular
@@ -71,6 +68,12 @@ $navbar-content-size: 36px
       transition: background-color $transition-low ease, color $transition-low ease
       width: 100%
 
+      &:not(:last-child)
+        margin-right: $size-regular
+
+        +for-size(mobile)
+          margin-right: $zero
+
       &#{$item}--is-active,
       &:hover
         background-color: $color-primary
@@ -78,12 +81,12 @@ $navbar-content-size: 36px
 
   #{$self}__menu
     cursor: pointer
+    font-size: 22px
     height: 100%
     line-height: $navbar-content-size
-    width: $navbar-content-size
-    font-size: 22px
     margin-left: $desktop-column-gap
     margin-right: $desktop-column-gap
+    width: $navbar-content-size
 
     +for-size(tablet)
       margin-left: $tablet-column-gap
@@ -92,63 +95,3 @@ $navbar-content-size: 36px
     +for-size(mobile)
       margin-left: $mobile-column-gap
       margin-right: $mobile-column-gap
-
-  #{$self}__sidebar
-    $sidebar: #{$self + '__sidebar'}
-    background-color: $color-background
-    height: calc(100vh - $navbar-height)
-    left: -#{$sidebar-width}
-    position: fixed
-    top: $navbar-height
-    transition: left $transition-medium $easing
-    width: $sidebar-width
-    z-index: 1
-
-    +for-size(mobile)
-      left: -80vw
-      width: 80vw
-
-    &#{$sidebar}--is-open
-      left: 0 !important
-      overflow-y: auto
-
-      #{$self}__close,
-      #{$self}__back
-        display: block
-
-    &#{$sidebar}--is-half
-      left: -50vw
-      width: 50vw
-
-    &#{$sidebar}--is-full-height
-      height: 100vh
-      top: $zero
-
-    &#{$sidebar}--is-full-width
-      left: -100vw
-      width: 100vw
-
-    #{$self}__close,
-    #{$self}__back
-      display: none
-      width: $navbar-content-size
-      font-size: 22px
-      cursor: pointer
-      padding: $size-regular
-      position: fixed
-      right: $size-regular
-      top: $size-regular
-      transition: all $transition-medium $easing
-
-      &#{$self}__close--is-bottom-center,
-      &#{$self}__back--is-bottom-center,
-        top: auto
-        left: calc(50% - #{$navbar-content-size / 2})
-        bottom: $size-regular
-
-    #{$self}__back
-      left: $size-regular
-      right: auto
-
-
-

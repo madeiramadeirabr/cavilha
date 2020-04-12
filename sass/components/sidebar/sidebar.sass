@@ -1,0 +1,67 @@
+@import '../../variables'
+@import '../../mixins'
+
+
+.sidebar
+  $self: &
+  background-color: $color-background
+  height: 100vh
+  overflow-y: auto
+  width: $sidebar-width
+
+  &#{$self}--is-floating
+    left: -#{$sidebar-width}
+    position: fixed
+    top: $zero
+    transition: left $transition-medium $easing
+    z-index: 1
+
+    &#{$self}--has-navbar
+      height: calc(100vh - #{$navbar-height})
+      top: $navbar-height
+
+    +for-size(mobile)
+      left: -80vw
+      width: 80vw
+
+    &#{$self}--is-open
+      left: 0 !important
+      overflow-y: auto
+
+      #{$self}__close,
+      #{$self}__back
+        display: block
+
+    &#{$self}--is-half
+      left: -50vw
+      width: 50vw
+
+    &#{$self}--is-full-width
+      left: -100vw
+      width: 100vw
+
+  &#{$self}--has-navbar
+    #{$self}__close,
+    #{$self}__back
+      top: $navbar-height + $size-regular
+
+  #{$self}__close,
+  #{$self}__back
+    cursor: pointer
+    display: none
+    font-size: 22px
+    padding: $size-regular
+    position: fixed
+    right: $size-regular
+    top: $size-regular
+    width: $navbar-content-size
+    z-index: 1
+
+    &--is-bottom-center
+      bottom: $size-regular !important
+      left: calc(50% - #{$navbar-content-size / 2})
+      top: auto !important
+
+  #{$self}__back
+    left: $size-regular
+    right: auto
