@@ -375,6 +375,7 @@ svg path:not([fill]) {
   .buttons {
     overflow-x: scroll;
     padding: 4px 0;
+    height: 100%;
   }
 }
 
@@ -382,6 +383,7 @@ svg path:not([fill]) {
   .buttons {
     overflow-x: scroll;
     padding: 4px 0;
+    height: 100%;
   }
 }
 
@@ -394,12 +396,11 @@ svg path:not([fill]) {
 }
 
 .button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
   background-color: transparent;
   background-position: center;
   border: transparent solid 1px;
@@ -489,7 +490,7 @@ svg path:not([fill]) {
   fill: currentColor;
 }
 
-.button:hover {
+.button.button--is-hover, .button:hover {
   background: #e6e6e6;
 }
 
@@ -497,7 +498,7 @@ svg path:not([fill]) {
   background: #ccc radial-gradient(circle, transparent 1%, #fff 1%) center/15000%;
 }
 
-.button:active {
+.button.button--is-active, .button:active {
   background-size: 100%;
   -webkit-transition: background 0s, border 0s;
   transition: background 0s, border 0s;
@@ -505,7 +506,7 @@ svg path:not([fill]) {
 
 .button:disabled, .button.button--is-disabled {
   color: #999;
-  cursor: default;
+  cursor: not-allowed;
   pointer-events: none;
 }
 
@@ -576,7 +577,7 @@ svg path:not([fill]) {
   color: #1f1f1f;
 }
 
-.button.button--is-default:hover {
+.button.button--is-default.button--is-hover, .button.button--is-default:hover {
   background-color: #e6e6e6;
 }
 
@@ -586,7 +587,7 @@ svg path:not([fill]) {
           box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4), 0 1px 1px rgba(0, 0, 0, 0.24);
 }
 
-.button.button--is-default:active {
+.button.button--is-default.button--is-active, .button.button--is-default:active {
   background-size: 100%;
   -webkit-transition: background 0s, border 0s;
   transition: background 0s, border 0s;
@@ -605,7 +606,7 @@ svg path:not([fill]) {
   color: #1f1f1f;
 }
 
-.button.button--is-default.button--is-outline:hover {
+.button.button--is-default.button--is-outline.button--is-hover, .button.button--is-default.button--is-outline:hover {
   background-color: #e6e6e6;
 }
 
@@ -614,7 +615,7 @@ svg path:not([fill]) {
   color: #fff;
 }
 
-.button.button--is-default.button--is-outline:active {
+.button.button--is-default.button--is-outline.button--is-active, .button.button--is-default.button--is-outline:active {
   background-size: 100%;
   -webkit-transition: background 0s, border 0s;
   transition: background 0s, border 0s;
@@ -633,7 +634,7 @@ svg path:not([fill]) {
   color: #fff;
 }
 
-.button.button--is-primary:hover {
+.button.button--is-primary.button--is-hover, .button.button--is-primary:hover {
   background-color: #dd3906;
 }
 
@@ -643,7 +644,7 @@ svg path:not([fill]) {
           box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4), 0 1px 1px rgba(0, 0, 0, 0.24);
 }
 
-.button.button--is-primary:active {
+.button.button--is-primary.button--is-active, .button.button--is-primary:active {
   background-size: 100%;
   -webkit-transition: background 0s, border 0s;
   transition: background 0s, border 0s;
@@ -662,7 +663,7 @@ svg path:not([fill]) {
   color: #888;
 }
 
-.button.button--is-primary.button--is-outline:hover {
+.button.button--is-primary.button--is-outline.button--is-hover, .button.button--is-primary.button--is-outline:hover {
   background-color: #fef3ea;
 }
 
@@ -671,7 +672,7 @@ svg path:not([fill]) {
   color: #fff;
 }
 
-.button.button--is-primary.button--is-outline:active {
+.button.button--is-primary.button--is-outline.button--is-active, .button.button--is-primary.button--is-outline:active {
   background-size: 100%;
   -webkit-transition: background 0s, border 0s;
   transition: background 0s, border 0s;
@@ -690,7 +691,7 @@ svg path:not([fill]) {
   color: #fff;
 }
 
-.button.button--is-secondary:hover {
+.button.button--is-secondary.button--is-hover, .button.button--is-secondary:hover {
   background-color: #004abe;
 }
 
@@ -700,7 +701,7 @@ svg path:not([fill]) {
           box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4), 0 1px 1px rgba(0, 0, 0, 0.24);
 }
 
-.button.button--is-secondary:active {
+.button.button--is-secondary.button--is-active, .button.button--is-secondary:active {
   background-size: 100%;
   -webkit-transition: background 0s, border 0s;
   transition: background 0s, border 0s;
@@ -719,7 +720,7 @@ svg path:not([fill]) {
   color: #1b78cd;
 }
 
-.button.button--is-secondary.button--is-outline:hover {
+.button.button--is-secondary.button--is-outline.button--is-hover, .button.button--is-secondary.button--is-outline:hover {
   background-color: #ecf5fc;
 }
 
@@ -728,7 +729,7 @@ svg path:not([fill]) {
   color: #fff;
 }
 
-.button.button--is-secondary.button--is-outline:active {
+.button.button--is-secondary.button--is-outline.button--is-active, .button.button--is-secondary.button--is-outline:active {
   background-size: 100%;
   -webkit-transition: background 0s, border 0s;
   transition: background 0s, border 0s;
@@ -747,7 +748,7 @@ svg path:not([fill]) {
   color: #fff;
 }
 
-.button.button--is-danger:hover {
+.button.button--is-danger.button--is-hover, .button.button--is-danger:hover {
   background-color: #990b13;
 }
 
@@ -757,7 +758,7 @@ svg path:not([fill]) {
           box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4), 0 1px 1px rgba(0, 0, 0, 0.24);
 }
 
-.button.button--is-danger:active {
+.button.button--is-danger.button--is-active, .button.button--is-danger:active {
   background-size: 100%;
   -webkit-transition: background 0s, border 0s;
   transition: background 0s, border 0s;
@@ -776,7 +777,7 @@ svg path:not([fill]) {
   color: #d91620;
 }
 
-.button.button--is-danger.button--is-outline:hover {
+.button.button--is-danger.button--is-outline.button--is-hover, .button.button--is-danger.button--is-outline:hover {
   background-color: #feeaea;
 }
 
@@ -785,7 +786,7 @@ svg path:not([fill]) {
   color: #fff;
 }
 
-.button.button--is-danger.button--is-outline:active {
+.button.button--is-danger.button--is-outline.button--is-active, .button.button--is-danger.button--is-outline:active {
   background-size: 100%;
   -webkit-transition: background 0s, border 0s;
   transition: background 0s, border 0s;
@@ -804,7 +805,7 @@ svg path:not([fill]) {
   color: #fff;
 }
 
-.button.button--is-success:hover {
+.button.button--is-success.button--is-hover, .button.button--is-success:hover {
   background-color: #0b2e12;
 }
 
@@ -814,7 +815,7 @@ svg path:not([fill]) {
           box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4), 0 1px 1px rgba(0, 0, 0, 0.24);
 }
 
-.button.button--is-success:active {
+.button.button--is-success.button--is-active, .button.button--is-success:active {
   background-size: 100%;
   -webkit-transition: background 0s, border 0s;
   transition: background 0s, border 0s;
@@ -833,7 +834,7 @@ svg path:not([fill]) {
   color: #207f33;
 }
 
-.button.button--is-success.button--is-outline:hover {
+.button.button--is-success.button--is-outline.button--is-hover, .button.button--is-success.button--is-outline:hover {
   background-color: #Ecf5fc;
 }
 
@@ -842,7 +843,7 @@ svg path:not([fill]) {
   color: #fff;
 }
 
-.button.button--is-success.button--is-outline:active {
+.button.button--is-success.button--is-outline.button--is-active, .button.button--is-success.button--is-outline:active {
   background-size: 100%;
   -webkit-transition: background 0s, border 0s;
   transition: background 0s, border 0s;
@@ -861,7 +862,7 @@ svg path:not([fill]) {
   color: #fff;
 }
 
-.button.button--is-whatsapp:hover {
+.button.button--is-whatsapp.button--is-hover, .button.button--is-whatsapp:hover {
   background-color: #075e54;
 }
 
@@ -871,7 +872,7 @@ svg path:not([fill]) {
           box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4), 0 1px 1px rgba(0, 0, 0, 0.24);
 }
 
-.button.button--is-whatsapp:active {
+.button.button--is-whatsapp.button--is-active, .button.button--is-whatsapp:active {
   background-size: 100%;
   -webkit-transition: background 0s, border 0s;
   transition: background 0s, border 0s;
@@ -890,7 +891,7 @@ svg path:not([fill]) {
   color: #128e54;
 }
 
-.button.button--is-whatsapp.button--is-outline:hover {
+.button.button--is-whatsapp.button--is-outline.button--is-hover, .button.button--is-whatsapp.button--is-outline:hover {
   background-color: #dcf8c6;
 }
 
@@ -899,7 +900,7 @@ svg path:not([fill]) {
   color: #fff;
 }
 
-.button.button--is-whatsapp.button--is-outline:active {
+.button.button--is-whatsapp.button--is-outline.button--is-active, .button.button--is-whatsapp.button--is-outline:active {
   background-size: 100%;
   -webkit-transition: background 0s, border 0s;
   transition: background 0s, border 0s;
@@ -918,7 +919,7 @@ svg path:not([fill]) {
   color: #fff;
 }
 
-.button.button--is-facebook:hover {
+.button.button--is-facebook.button--is-hover, .button.button--is-facebook:hover {
   background-color: #304570;
 }
 
@@ -928,7 +929,7 @@ svg path:not([fill]) {
           box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4), 0 1px 1px rgba(0, 0, 0, 0.24);
 }
 
-.button.button--is-facebook:active {
+.button.button--is-facebook.button--is-active, .button.button--is-facebook:active {
   background-size: 100%;
   -webkit-transition: background 0s, border 0s;
   transition: background 0s, border 0s;
@@ -947,7 +948,7 @@ svg path:not([fill]) {
   color: #3b5998;
 }
 
-.button.button--is-facebook.button--is-outline:hover {
+.button.button--is-facebook.button--is-outline.button--is-hover, .button.button--is-facebook.button--is-outline:hover {
   background-color: #f7f7f7;
 }
 
@@ -956,7 +957,7 @@ svg path:not([fill]) {
   color: #fff;
 }
 
-.button.button--is-facebook.button--is-outline:active {
+.button.button--is-facebook.button--is-outline.button--is-active, .button.button--is-facebook.button--is-outline:active {
   background-size: 100%;
   -webkit-transition: background 0s, border 0s;
   transition: background 0s, border 0s;
@@ -1146,6 +1147,7 @@ svg path:not([fill]) {
       flex-flow: row wrap;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  height: 100%;
   padding: 0;
 }
 
@@ -1208,6 +1210,7 @@ svg path:not([fill]) {
   -webkit-box-flex: 1;
       -ms-flex: 1 0;
           flex: 1 0;
+  height: 100%;
   margin-left: 12px;
   margin-right: 12px;
 }
@@ -1572,12 +1575,19 @@ svg path:not([fill]) {
   border-radius: 4px;
   height: 100vh;
   overflow: hidden;
-  padding: 32px;
   width: 100%;
+}
+
+.hero.hero--has-navbar {
+  height: calc(100vh - 60px);
 }
 
 .hero.hero--has-no-radius {
   border-radius: 0;
+}
+
+.hero.hero--is-auto {
+  height: auto;
 }
 
 .hero.hero--is-extra-small {
@@ -1601,6 +1611,7 @@ svg path:not([fill]) {
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
   background-color: #333;
   border-radius: 4px;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -1628,9 +1639,9 @@ svg path:not([fill]) {
 }
 
 .container {
+  height: 100%;
   margin: 0 auto;
   padding: 0;
-  height: 100%;
 }
 
 .container.container--has-sidebar {
@@ -1707,14 +1718,35 @@ svg path:not([fill]) {
   border-top: dashed 2px #ccc !important;
 }
 
-.list {
+.collection {
+  height: 100%;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.list.list--is-horizontal li {
+.collection.collection--is-horizontal .collection__item {
   display: inline-block;
+}
+
+.collection.collection--is-vertical {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.collection.collection--is-vertical .collection__item {
+  display: block;
+}
+
+.collection.collection--is-vertical .collection__item::after {
+  clear: both;
+  content: " ";
+  display: table;
 }
 
 .text {
@@ -1787,7 +1819,7 @@ svg path:not([fill]) {
 }
 
 .image.image--is-cropped-extra-large {
-  height: 440px;
+  height: 400px;
 }
 
 @media (min-width: 601px) and (max-width: 1112px) {
@@ -1804,7 +1836,7 @@ svg path:not([fill]) {
     height: 320px;
   }
   .image.image--is-cropped-extra-large-tablet {
-    height: 440px;
+    height: 400px;
   }
 }
 
@@ -1822,12 +1854,16 @@ svg path:not([fill]) {
     height: 320px;
   }
   .image.image--is-cropped-extra-large-mobile {
-    height: 440px;
+    height: 400px;
   }
 }
 
 .navbar {
-  background: #000;
+  background-color: #000;
+}
+
+.navbar .navbar--is-transparent {
+  background-color: inherit;
 }
 
 .navbar .navbar__container {
@@ -1912,16 +1948,16 @@ svg path:not([fill]) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: auto 1 auto;
+          flex: auto 1 auto;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  height: 36px;
   margin-left: auto;
   margin-right: 12px;
-  -webkit-box-flex: 1;
-      -ms-flex: auto 1 auto;
-          flex: auto 1 auto;
-  height: 36px;
 }
 
 @media (min-width: 601px) and (max-width: 1112px) {
@@ -1935,14 +1971,14 @@ svg path:not([fill]) {
     -webkit-box-flex: 100%;
         -ms-flex: 100%;
             flex: 100%;
-    margin-left: 8px;
-    margin-right: 8px;
-    margin-top: 12px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
     height: 100%;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-top: 12px;
   }
 }
 
@@ -1976,6 +2012,12 @@ svg path:not([fill]) {
 }
 
 .navbar .navbar__menu {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: transparent;
+  border-width: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   cursor: pointer;
   font-size: 22px;
   height: 100%;
@@ -2032,8 +2074,7 @@ svg path:not([fill]) {
   overflow-y: auto;
 }
 
-.sidebar.sidebar--is-floating.sidebar--is-open .sidebar__close,
-.sidebar.sidebar--is-floating.sidebar--is-open .sidebar__back {
+.sidebar.sidebar--is-floating.sidebar--is-open .sidebar__button {
   display: block;
 }
 
@@ -2047,38 +2088,78 @@ svg path:not([fill]) {
   width: 100vw;
 }
 
-.sidebar.sidebar--has-navbar .sidebar__close,
-.sidebar.sidebar--has-navbar .sidebar__back {
+.sidebar.sidebar--has-navbar .sidebar__button {
   top: 72px;
 }
 
-.sidebar .sidebar__close,
-.sidebar .sidebar__back {
+.sidebar .sidebar__button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: transparent;
+  border-width: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   cursor: pointer;
   display: none;
   font-size: 22px;
-  padding: 12px;
-  position: fixed;
+  height: 36px;
+  line-height: 36px;
+  outline: none;
+  position: absolute;
   right: 12px;
   top: 12px;
   width: 36px;
   z-index: 1;
 }
 
-.sidebar .sidebar__close--is-bottom-center,
-.sidebar .sidebar__back--is-bottom-center {
-  bottom: 12px !important;
+.sidebar .sidebar__button.sidebar__button--is-bottom-center {
+  bottom: 12px;
   left: calc(50% - 18px);
-  top: auto !important;
+  right: auto;
+  top: auto;
 }
 
-.sidebar .sidebar__back {
+.sidebar .sidebar__button.sidebar__button--is-bottom-right {
+  bottom: 12px;
+  left: auto;
+  right: 12px;
+  top: auto;
+}
+
+.sidebar .sidebar__button.sidebar__button--is-bottom-left {
+  bottom: 12px;
   left: 12px;
   right: auto;
+  top: auto;
+}
+
+.sidebar .sidebar__button.sidebar__button--is-top-center {
+  bottom: auto;
+  left: calc(50% - 18px);
+  right: auto;
+  top: 12px;
+}
+
+.sidebar .sidebar__button.sidebar__button--is-top-right {
+  bottom: auto;
+  left: auto;
+  right: 12px;
+  top: 12px;
+}
+
+.sidebar .sidebar__button.sidebar__button--is-top-left {
+  bottom: auto;
+  left: 12px;
+  right: auto;
+  top: 12px;
 }
 
 .helper--has-background-default {
   background-color: #000;
+}
+
+.helper--has-background-border {
+  background-color: #e6e6e6;
 }
 
 .helper--has-background-text {
@@ -2203,6 +2284,146 @@ svg path:not([fill]) {
 
 .helper--has-background-fixed {
   background-attachment: fixed;
+}
+
+.helper--has-no-border {
+  border: none;
+}
+
+.helper--has-border-double {
+  border-width: 2px;
+}
+
+.helper--has-border-dashed {
+  border-style: dashed;
+}
+
+.helper--has-border {
+  border: solid 1px #e6e6e6;
+}
+
+.helper--has-border-color-default {
+  border-color: #e6e6e6;
+}
+
+.helper--has-border-color-text {
+  border-color: #fff;
+}
+
+.helper--has-border-color-white {
+  border-color: #fff;
+}
+
+.helper--has-border-color-black {
+  border-color: #000;
+}
+
+.helper--has-border-color-primary {
+  border-color: #888;
+}
+
+.helper--has-border-color-primary-one {
+  border-color: #ffA240;
+}
+
+.helper--has-border-color-primary-two {
+  border-color: #f58220;
+}
+
+.helper--has-border-color-primary-three {
+  border-color: #F66A26;
+}
+
+.helper--has-border-color-primary-four {
+  border-color: #dd3906;
+}
+
+.helper--has-border-color-secondary {
+  border-color: #1b78cd;
+}
+
+.helper--has-border-color-secondary-one {
+  border-color: #a3d5ff;
+}
+
+.helper--has-border-color-secondary-two {
+  border-color: #4b9de4;
+}
+
+.helper--has-border-color-secondary-three {
+  border-color: #1b78cd;
+}
+
+.helper--has-border-color-secondary-four {
+  border-color: #004abe;
+}
+
+.helper--has-border-color-gray-one {
+  border-color: #f9f9f9;
+}
+
+.helper--has-border-color-gray-two {
+  border-color: #e6e6e6;
+}
+
+.helper--has-border-color-gray-three {
+  border-color: #ccc;
+}
+
+.helper--has-border-color-gray-four {
+  border-color: #999;
+}
+
+.helper--has-border-color-gray-five {
+  border-color: #808080;
+}
+
+.helper--has-border-color-gray-six {
+  border-color: #333;
+}
+
+.helper--has-border-color-gray-seven {
+  border-color: #1f1f1f;
+}
+
+.helper--has-border-color-success {
+  border-color: #207f33;
+}
+
+.helper--has-border-color-success-one {
+  border-color: #2aa843;
+}
+
+.helper--has-border-color-success-two {
+  border-color: #207f33;
+}
+
+.helper--has-border-color-success-three {
+  border-color: #165623;
+}
+
+.helper--has-border-color-success-four {
+  border-color: #0b2e12;
+}
+
+.helper--has-border-color-danger {
+  border-color: #d91620;
+}
+
+.helper--has-border-color-danger-one {
+  border-color: #f2242f;
+}
+
+.helper--has-border-color-danger-two {
+  border-color: #d91620;
+}
+
+.helper--has-border-color-danger-three {
+  border-color: #b3121b;
+}
+
+.helper--has-border-color-danger-four {
+  border-color: #990b13;
 }
 
 .helper--has-no-gap {
@@ -2905,6 +3126,10 @@ svg path:not([fill]) {
   color: #fff;
 }
 
+.helper--has-color-border {
+  color: #e6e6e6;
+}
+
 .helper--has-color-text {
   color: #fff;
 }
@@ -3048,6 +3273,7 @@ svg path:not([fill]) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -3078,6 +3304,7 @@ svg path:not([fill]) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 100%;
 }
 
 .helper--has-items-end {
@@ -3103,6 +3330,7 @@ svg path:not([fill]) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 100%;
 }
 
 .helper--has-self-align-end {

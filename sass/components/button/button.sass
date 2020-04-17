@@ -8,6 +8,7 @@ $button-size-extra-large: 60px
 =buttons
   overflow-x: scroll
   padding: $size-extra-small $zero
+  height: 100%
 
 .buttons
   +flex-row
@@ -28,8 +29,9 @@ $button-size-extra-large: 60px
 
 .button
   $self: '.button'
+  -webkit-appearance: none
+  -moz-appearance: none
   align-items: center
-  appearance: none
   background-color: transparent
   background-position: center
   border: transparent solid $border-width
@@ -85,12 +87,14 @@ $button-size-extra-large: 60px
       &:not([fill]) // sass-lint:disable-line nesting-depth
         fill: currentColor
 
+  &#{$self}--is-hover,
   &:hover
     background: map-get($button-background-hovered-map, default)
 
   &:focus
     background: map-get($button-background-focused-start-map, default) radial-gradient(circle, transparent 1%, map-get($button-background-focused-end-map, default) 1%) center / 15000%
 
+  &#{$self}--is-active,
   &:active
     background-size: 100%
     transition: background 0s, border 0s
@@ -98,7 +102,7 @@ $button-size-extra-large: 60px
   &:disabled,
   &#{$self}--is-disabled
     color: map-get($button-color-disabled-map, default)
-    cursor: default
+    cursor: not-allowed
     pointer-events: none
 
   &#{$self}--is-outline
@@ -159,6 +163,7 @@ $button-size-extra-large: 60px
       box-shadow: $button-shadow
       color: map-get($button-color-map, $color)
 
+      &#{ $self }--is-hover,
       &:hover
         background-color: map-get($button-background-hovered-map, $color)
 
@@ -166,6 +171,7 @@ $button-size-extra-large: 60px
         background: map-get($button-background-focused-start-map, $color) radial-gradient(circle, transparent 1%, map-get($button-background-focused-end-map, $color) 1%) center / 15000%
         box-shadow: $button-shadow-actived
 
+      &#{ $self }--is-active,
       &:active
         background-size: 100%
         transition: background 0s, border 0s
@@ -181,6 +187,7 @@ $button-size-extra-large: 60px
         box-shadow: none
         color: map-get($button-outlined-color-map, $color)
 
+        &#{ $self }--is-hover,
         &:hover
           background-color: map-get($button-outlined-background-hovered-map, $color)
 
@@ -188,6 +195,7 @@ $button-size-extra-large: 60px
           background: map-get($button-outlined-background-focused-start-map, $color) radial-gradient(circle, transparent 1%, map-get($button-outlined-background-focused-end-map, $color) 1%) center / 15000%
           color: map-get($button-outlined-color-focused-map, $color)
 
+        &#{ $self }--is-active,
         &:active
           background-size: 100%
           transition: background 0s, border 0s

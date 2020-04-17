@@ -8,11 +8,16 @@
   border-radius: $radius
   height: 100vh
   overflow: hidden
-  padding: $size-extra-large
   width: 100%
+
+  &#{$self}--has-navbar
+    height: calc(100vh - #{$navbar-height})
 
   &#{$self}--has-no-radius
     border-radius: $zero
+
+  &#{$self}--is-auto
+    height: auto
 
   &#{$self}--is-extra-small
     height: 180px

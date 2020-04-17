@@ -1,0 +1,18 @@
+.collection
+  $self: &
+  height: 100%
+  list-style: none
+  margin: $zero
+  padding: $zero
+
+  &#{$self}--is-horizontal
+    #{$self}__item
+      display: inline-block
+
+  &#{$self}--is-vertical
+    display: flex
+    flex-direction: column
+
+    #{$self}__item
+      +clearfix
+      display: block

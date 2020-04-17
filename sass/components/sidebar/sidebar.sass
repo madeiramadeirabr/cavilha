@@ -28,8 +28,7 @@
       left: 0 !important
       overflow-y: auto
 
-      #{$self}__close,
-      #{$self}__back
+      #{$self}__button
         display: block
 
     &#{$self}--is-half
@@ -41,27 +40,60 @@
       width: 100vw
 
   &#{$self}--has-navbar
-    #{$self}__close,
-    #{$self}__back
+    #{$self}__button
       top: $navbar-height + $size-regular
 
-  #{$self}__close,
-  #{$self}__back
+  #{$self}__button
+    $button: #{$self + '__button'}
+    -webkit-appearance: none
+    -moz-appearance: none
+    background-color: transparent
+    border-width: $zero
+    box-shadow: none
     cursor: pointer
     display: none
     font-size: 22px
-    padding: $size-regular
-    position: fixed
+    height: $navbar-content-size
+    line-height: $navbar-content-size
+    outline: none
+    position: absolute
     right: $size-regular
     top: $size-regular
     width: $navbar-content-size
     z-index: 1
 
-    &--is-bottom-center
-      bottom: $size-regular !important
+    &#{$button}--is-bottom-center
+      bottom: $size-regular
       left: calc(50% - #{$navbar-content-size / 2})
-      top: auto !important
+      right: auto
+      top: auto
 
-  #{$self}__back
-    left: $size-regular
-    right: auto
+    &#{$button}--is-bottom-right
+      bottom: $size-regular
+      left: auto
+      right: $size-regular
+      top: auto
+
+    &#{$button}--is-bottom-left
+      bottom: $size-regular
+      left: $size-regular
+      right: auto
+      top: auto
+
+    &#{$button}--is-top-center
+      bottom: auto
+      left: calc(50% - #{$navbar-content-size / 2})
+      right: auto
+      top: $size-regular
+
+    &#{$button}--is-top-right
+      bottom: auto
+      left: auto
+      right: $size-regular
+      top: $size-regular
+
+    &#{$button}--is-top-left
+      bottom: auto
+      left: $size-regular
+      right: auto
+      top: $size-regular

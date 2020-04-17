@@ -4,7 +4,10 @@
 
 .navbar
   $self: &
-  background: $color-background
+  background-color: $color-background
+
+  &#{$self}--is-transparent
+    background-color: inherit
 
   #{$self}__container
     display: flex
@@ -58,22 +61,22 @@
   #{$self}__items
     align-items: center
     display: flex
+    flex: auto 1 auto
     flex-direction: row
+    height: $navbar-content-size
     margin-left: auto
     margin-right: $desktop-column-gap
-    flex: auto 1 auto
-    height: $navbar-content-size
 
     +for-size(tablet)
       margin-right: $tablet-column-gap
 
     +for-size(mobile)
       flex: 100%
+      flex-direction: column
+      height: 100%
       margin-left: $mobile-column-gap
       margin-right: $mobile-column-gap
       margin-top: $size-regular
-      flex-direction: column
-      height: 100%
 
     #{$self}__item
       $item: #{$self + '__item'}
@@ -100,6 +103,11 @@
         color: $color-white
 
   #{$self}__menu
+    -webkit-appearance: none
+    -moz-appearance: none
+    background-color: transparent
+    border-width: $zero
+    box-shadow: none
     cursor: pointer
     font-size: 22px
     height: 100%
