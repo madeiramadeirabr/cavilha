@@ -6,9 +6,9 @@ $button-size-extra-large: 60px
 
 
 =buttons
+  height: 100%
   overflow-x: scroll
   padding: $size-extra-small $zero
-  height: 100%
 
 .buttons
   +flex-row
@@ -159,8 +159,8 @@ $button-size-extra-large: 60px
 
   @each $color, $value in $button-background-map
     &#{$self}--is-#{ $color }
+      +shadow-small
       background-color: $value
-      box-shadow: $button-shadow
       color: map-get($button-color-map, $color)
 
       &#{ $self }--is-hover,
@@ -168,8 +168,8 @@ $button-size-extra-large: 60px
         background-color: map-get($button-background-hovered-map, $color)
 
       &:focus
+        +shadow-extra-small
         background: map-get($button-background-focused-start-map, $color) radial-gradient(circle, transparent 1%, map-get($button-background-focused-end-map, $color) 1%) center / 15000%
-        box-shadow: $button-shadow-actived
 
       &#{ $self }--is-active,
       &:active

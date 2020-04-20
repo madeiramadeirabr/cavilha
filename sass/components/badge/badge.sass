@@ -1,0 +1,47 @@
+.badge
+  $self: &
+  background-color: map-get($badge-background-map, default)
+  border: solid 1px map-get($badge-border-map, default)
+  border-radius: $radius
+  color: map-get($badge-color-map, default)
+  display: inline-block
+  font-size: calc(100% - #{$size-extra-small + 1})
+  line-height: 1
+  margin: auto #{$size-regular / 2}
+  padding: $size-extra-small $size-small
+  white-space: nowrap
+  word-wrap: nowrap
+
+  &:last-of-type
+    margin-right: $zero
+
+  &:first-of-type
+    margin-left: $zero
+
+  &#{$self}--is-pill
+    border-radius: $font-size-one
+    padding: $size-extra-small
+    min-width: 20px
+
+  @each $color, $value in $badge-background-map
+    &#{$self}--is-#{ $color }
+      background-color: $value
+      border-color: map-get($badge-border-map, $color)
+      color: map-get($badge-color-map, $color)
+
+      &#{$self}--is-outline
+        background-color: map-get($badge-background-outline-map, $color)
+        border-color: map-get($badge-border-outline-map, $color)
+        color: map-get($badge-color-outline-map, $color)
+
+  &#{$self}--is-outline
+    background-color: map-get($badge-background-outline-map, default)
+    border-color: map-get($badge-color-outline-map, default)
+    color: map-get($badge-color-outline-map, default)
+
+  &#{$self}--is-floating
+    cursor: inherit
+    position: absolute
+    right: -#{$base}
+    top: -#{$base}
+

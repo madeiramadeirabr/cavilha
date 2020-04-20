@@ -1,11 +1,20 @@
-@import '../mixins'
+
 
 .helper
-  &--has-shadow
-    +box-shadow
-
-  &--has-shadow-large
-    +box-shadow-large
-
   &--has-no-shadow
     box-shadow: none !important // sass-lint:disable-line no-important
+
+  &--has-shadow-extra-small
+    +shadow-extra-small
+
+  &--has-shadow-small
+    +shadow-small
+
+  &--has-shadow
+    +shadow
+
+  &--has-shadow-large
+    +shadow-large
+
+  &--has-shadow-extra-large
+    +shadow-extra-large

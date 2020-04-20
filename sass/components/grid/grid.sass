@@ -13,13 +13,13 @@
 
   +for-size(mobile)
     &--has-horizontal-scroll-mobile
-      overflow-y: hidden
-      overflow-x: auto
-      scroll-behavior: smooth
+      -webkit-overflow-scrolling: touch
       flex-flow: row
       flex-wrap: nowrap
-      -webkit-overflow-scrolling: touch
+      overflow-x: auto
+      overflow-y: hidden
       padding: $size-small $zero
+      scroll-behavior: smooth
 
       &::-webkit-scrollbar
         display: none

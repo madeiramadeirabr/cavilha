@@ -1,7 +1,3 @@
-@use '../colors'
-@use '../variables'
-
-
 .helper
   &--has-text
     &-light
@@ -27,6 +23,15 @@
 
     &-justify
       text-align: justify
+
+    &-capitalized
+      text-transform: capitalize
+
+    &-upper
+      text-transform: uppercase
+
+    &-lower
+      text-transform: lowercase
 
     +for-size(mobile)
       &-left-mobile

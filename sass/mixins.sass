@@ -28,11 +28,20 @@
   -webkit-user-select: none // sass-lint:disable-line no-vendor-prefixes
   user-select: none
 
-=box-shadow
+=shadow-extra-small
+  box-shadow: $zero 1px 1px rgba($zero, $zero, $zero, .4), $zero 1px 1px rgba($zero, $zero, $zero, .24)
+
+=shadow-small
+  box-shadow: $zero 2px 2px rgba($zero, $zero, $zero, .24), $zero $zero 2px rgba($zero, $zero, $zero, .12)
+
+=shadow
   box-shadow: $zero 2px 2px $color-shadow, $zero $zero 2px $color-shadow
 
-=box-shadow-large
+=shadow-large
   box-shadow: $zero 4px 8px $color-shadow-light
+
+=shadow-extra-large
+  box-shadow: $zero 8px 12px $color-shadow-light
 
 
 %unselectable

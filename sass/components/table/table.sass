@@ -1,0 +1,73 @@
+.table
+  $self: &
+  background-color: $table-background
+  border: solid 1px $table-border-color
+  border-collapse: separate
+  border-radius: $radius
+  border-spacing: 0
+  display: table
+  max-width: 100%
+  overflow: hidden
+  width: 100%
+
+  thead
+    th
+      border-bottom: solid 1px $table-row-border-color
+      font-weight: $weight-bold
+      padding: $size-regular
+      vertical-align: middle
+      width: 100%
+
+      &:first-child
+        white-space: nowrap
+        width: auto
+        word-wrap: nowrap
+
+  tbody
+    tr
+      background-color: $table-row-background
+
+      &:hover
+        background-color: $table-row-background-hovered
+
+      &:last-child
+        td
+          border-bottom-width: $zero
+
+    td
+      border-bottom: solid 1px $table-row-border-color
+      padding: $size-small $size-regular
+      vertical-align: middle
+      width: 100%
+
+      &:first-child
+        white-space: nowrap
+        width: auto
+        word-wrap: nowrap
+
+  tfoot
+    font-weight: $weight-bold
+
+  &#{$self}--is-compact
+    thead
+      th
+        padding: $size-small $size-regular
+
+    tbody
+      td
+        padding: $size-extra-small $size-regular
+
+  &--has-no-border
+    border-width: $zero
+
+  &--is-clean
+    border-width: $zero
+    thead
+      th
+        border-bottom-width: $zero
+
+    tbody
+      td
+        border-bottom-width: $zero
+
+
