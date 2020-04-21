@@ -1,4 +1,4 @@
-.input-group
+.text-field
   $self: &
   position: relative
   margin: $size-regular $zero
@@ -76,7 +76,7 @@
     line-height: 18px
     margin-left: 12px
 
-  #{$self}--has-icon-left
+  &#{$self}--has-icon-left
     input,
     textarea
       padding-left: 40px
@@ -84,7 +84,7 @@
     #{$self}__label
       left: 40px
 
-  #{$self}--is-danger
+  &#{$self}--is-negative
     input,
     textarea
       border-color: $color-danger
@@ -105,7 +105,7 @@
       fill: $color-danger
       color: $color-danger
 
-  #{$self}--is-success
+  &#{$self}--is-positive
     input,
     textarea
       border-color: $color-success
@@ -126,6 +126,23 @@
       fill: $color-success
       color: $color-success
 
+  &#{$self}--is-active
+    input,
+    textarea
+      border-color: $color-secondary
 
+      &:focus,
+      &:hover
+        border-color: $color-secondary !important
 
+      &:focus + #{$self}__label,
+      &:valid + #{$self}__label,
+      &:focus + #{$self}__label + #{$self}__helper,
+	      color: $color-secondary
 
+    #{$self}__helper
+      color: $color-secondary
+
+    svg
+      fill: $color-secondary
+      color: $color-secondary

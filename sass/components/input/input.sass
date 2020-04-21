@@ -1,8 +1,26 @@
 .input
   $self: &
-  +clearfix
+  display: inline-flex
   position: relative
-  width: 100%
+
+  &#{$self}--is-inline
+    margin: auto ($size-regular / 2)
+
+    &:first-of-type
+      margin-left: $zero
+
+    &:last-of-type
+      margin-right: $zero
+
+  &#{$self}--is-block
+    margin: ($size-regular / 2) auto
+    width: 100%
+
+    &:first-of-type
+      margin-top: $zero
+
+    &:last-of-type
+      margin-bottom: $zero
 
   &:hover
     #{$self}__marker
@@ -28,8 +46,8 @@
       display: none
       position: absolute
 
-  &#{$self}__radio,
-  &#{$self}__checkbox
+  #{$self}__radio,
+  #{$self}__checkbox
     +unselectable
     cursor: pointer
     display: block
@@ -72,7 +90,7 @@
             box-shadow: $zero $zero $zero 2px $input-marker-background
             content: $content
 
-  &#{$self}__checkbox
+  #{$self}__checkbox
     #{$self}__marker
       border-radius: $zero
 

@@ -91,13 +91,10 @@ $button-size-extra-large: 60px
   &:hover
     background: map-get($button-background-hovered-map, default)
 
-  &:focus
-    background: map-get($button-background-focused-start-map, default) radial-gradient(circle, transparent 1%, map-get($button-background-focused-end-map, default) 1%) center / 15000%
-
   &#{$self}--is-active,
   &:active
-    background-size: 100%
-    transition: background 0s, border 0s
+    +shadow-extra-small
+    background: map-get($button-background-hovered-map, default)
 
   &:disabled,
   &#{$self}--is-disabled
@@ -164,17 +161,14 @@ $button-size-extra-large: 60px
       color: map-get($button-color-map, $color)
 
       &#{ $self }--is-hover,
+      &#{ $self }--is-active,
+      &:active,
       &:hover
         background-color: map-get($button-background-hovered-map, $color)
 
-      &:focus
-        +shadow-extra-small
-        background: map-get($button-background-focused-start-map, $color) radial-gradient(circle, transparent 1%, map-get($button-background-focused-end-map, $color) 1%) center / 15000%
-
       &#{ $self }--is-active,
       &:active
-        background-size: 100%
-        transition: background 0s, border 0s
+        +shadow-extra-small
 
       &:disabled,
       &#{ $self }--is-disabled
@@ -191,14 +185,12 @@ $button-size-extra-large: 60px
         &:hover
           background-color: map-get($button-outlined-background-hovered-map, $color)
 
-        &:focus
-          background: map-get($button-outlined-background-focused-start-map, $color) radial-gradient(circle, transparent 1%, map-get($button-outlined-background-focused-end-map, $color) 1%) center / 15000%
-          color: map-get($button-outlined-color-focused-map, $color)
-
         &#{ $self }--is-active,
-        &:active
-          background-size: 100%
-          transition: background 0s, border 0s
+        &:active,
+        &:focus
+          background-color: map-get($button-outlined-background-actived-map, $color)
+          box-shadow: none
+          color: map-get($button-outlined-color-focused-map, $color)
 
         &:disabled,
         &#{ $self }--is-disabled

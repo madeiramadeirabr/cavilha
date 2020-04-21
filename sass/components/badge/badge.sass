@@ -4,13 +4,17 @@
   border: solid 1px map-get($badge-border-map, default)
   border-radius: $radius
   color: map-get($badge-color-map, default)
-  display: inline-block
+  cursor: default
+  display: inline
   font-size: calc(100% - #{$size-extra-small + 1})
   line-height: 1
   margin: auto #{$size-regular / 2}
   padding: $size-extra-small $size-small
   white-space: nowrap
   word-wrap: nowrap
+
+  &:hover
+    text-transform: none
 
   &:last-of-type
     margin-right: $zero
@@ -20,8 +24,8 @@
 
   &#{$self}--is-pill
     border-radius: $font-size-one
-    padding: $size-extra-small
     min-width: 20px
+    padding: $size-extra-small
 
   @each $color, $value in $badge-background-map
     &#{$self}--is-#{ $color }

@@ -6,17 +6,32 @@
   height: 100%
   overflow: hidden
 
-  &#{$self}--has-no-border-radius
+  &#{$self}--has-no-radius
     border-radius: $zero
 
   &#{$self}--has-no-shadow
     box-shadow: none
 
+  &#{$self}--has-shadow-extra-small
+    +shadow-extra-small
+
+  &#{$self}--has-shadow-small
+    +shadow-small
+
+  &#{$self}--has-shadow-large
+    +shadow-large
+
+  &#{$self}--has-shadow-extra-large
+    +shadow-extra-large
+
   #{$self}__header
     +clearfix
 
   #{$self}__content
+    +clearfix
     padding: $size-regular
 
   #{$self}__footer
     padding: $size-regular
+
+

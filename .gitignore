@@ -13,3 +13,4 @@ yarn-error.log*
 
 dev
 public/icons
+/docs

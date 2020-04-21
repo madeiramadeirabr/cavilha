@@ -1,0 +1,77 @@
+span.chip,
+div.chip
+  cursor: default
+
+a.chip
+  color: map-get($chip-color-map, default)
+  cursor: pointer
+
+.chip
+  $self: &
+  background-color: map-get($chip-background-map, default)
+  border: solid 2px map-get($chip-border-map, default)
+  border-radius: 40px
+  color: map-get($chip-color-map, default)
+  display: inline
+  font-size: $font-size-two
+  line-height: $font-size-three
+  margin: auto #{$size-regular / 2}
+  padding: ($size-small - 1px) $size-regular
+  position: relative
+  transition: background-color $transition-hover $easing, border-color $transition-hover $easing, color $transition $easing
+  white-space: nowrap
+  word-wrap: nowrap
+
+  &:hover
+    background-color: map-get($chip-background-hovered-map, default)
+    border-color: map-get($chip-background-hovered-map, default)
+    text-decoration: none
+
+  #{$self}__close
+    -webkit-appearance: none
+    -moz-appearance: none
+    background-color: transparent
+    border-width: $zero
+    box-shadow: none
+    content: '×'
+    cursor: pointer
+    font-size: 20px
+    font-weight: $weight-semibold
+    line-height: 1
+    margin: $zero $zero $zero $size-regular
+    outline: none
+    padding: $zero
+
+  &:last-of-type
+    margin-right: $zero
+
+  &:first-of-type
+    margin-left: $zero
+
+  @each $color, $value in $chip-background-map
+    &#{$self}--is-#{ $color }
+      background-color: $value
+      border-color: map-get($chip-border-map, $color)
+      color: map-get($chip-color-map, $color)
+
+      &:hover
+        background-color: map-get($chip-background-hovered-map, $color)
+        border-color: map-get($chip-background-hovered-map, $color)
+
+      &#{$self}--is-outline
+        background-color: map-get($chip-background-outline-map, $color)
+        border-color: map-get($chip-border-outline-map, $color)
+        color: map-get($chip-color-outline-map, $color)
+
+        &:hover
+          border-color: map-get($chip-border-outline-hovered-map, $color)
+          color: map-get($chip-color-outline-hovered-map, $color)
+
+  &#{$self}--is-outline
+    background-color: map-get($chip-background-outline-map, default)
+    border-color: map-get($chip-border-outline-map, default)
+    color: map-get($chip-color-outline-map, default)
+
+    &:hover
+      border-color: map-get($chip-border-outline-hovered-map, default)
+      color: map-get($chip-color-outline-hovered-map, default)
