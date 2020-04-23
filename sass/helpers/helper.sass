@@ -1,7 +1,24 @@
-
-
++keyframes(loading-placeholder)
+  0%
+    background-position: 100% 0
+  100%
+    background-position: 0% 0
 
 .helper
+
+  &--has-loading-placeholder
+    animation-duration: 1s
+    animation-fill-mode: forwards
+    animation-iteration-count: infinite
+    animation-name: loading-placeholder
+    animation-timing-function: linear
+    background: #f6f7f8
+    background: linear-gradient(to right, $color-gray-two 0%, $color-gray-three 18%, $color-gray-two 33%)
+    background-size: 1000% 100%
+    height: 100%
+    width: 100%
+    position: relative
+    overflow: hidden
 
   &--has-scroll
     overflow: scroll

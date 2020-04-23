@@ -3279,6 +3279,45 @@ a.chip {
   }
 }
 
+@-webkit-keyframes loading-placeholder {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0% 0;
+  }
+}
+
+@keyframes loading-placeholder {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0% 0;
+  }
+}
+
+.helper--has-loading-placeholder {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-name: loading-placeholder;
+          animation-name: loading-placeholder;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  background: #f6f7f8;
+  background: -webkit-gradient(linear, left top, right top, from(#e6e6e6), color-stop(18%, #ccc), color-stop(33%, #e6e6e6));
+  background: linear-gradient(to right, #e6e6e6 0%, #ccc 18%, #e6e6e6 33%);
+  background-size: 1000% 100%;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
 .helper--has-scroll {
   overflow: scroll;
 }
@@ -3968,6 +4007,138 @@ a.chip {
   display: flex;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
+}
+
+.helper--has-fill-default {
+  fill: #f9f9f9;
+}
+
+.helper--has-fill-border {
+  fill: #999;
+}
+
+.helper--has-fill-text {
+  fill: #333;
+}
+
+.helper--has-fill-white {
+  fill: #fff;
+}
+
+.helper--has-fill-black {
+  fill: #000;
+}
+
+.helper--has-fill-primary {
+  fill: #F66A26;
+}
+
+.helper--has-fill-primary-one {
+  fill: #ffA240;
+}
+
+.helper--has-fill-primary-two {
+  fill: #f58220;
+}
+
+.helper--has-fill-primary-three {
+  fill: #F66A26;
+}
+
+.helper--has-fill-primary-four {
+  fill: #dd3906;
+}
+
+.helper--has-fill-secondary {
+  fill: #1b78cd;
+}
+
+.helper--has-fill-secondary-one {
+  fill: #a3d5ff;
+}
+
+.helper--has-fill-secondary-two {
+  fill: #4b9de4;
+}
+
+.helper--has-fill-secondary-three {
+  fill: #1b78cd;
+}
+
+.helper--has-fill-secondary-four {
+  fill: #004abe;
+}
+
+.helper--has-fill-gray-one {
+  fill: #f9f9f9;
+}
+
+.helper--has-fill-gray-two {
+  fill: #e6e6e6;
+}
+
+.helper--has-fill-gray-three {
+  fill: #ccc;
+}
+
+.helper--has-fill-gray-four {
+  fill: #999;
+}
+
+.helper--has-fill-gray-five {
+  fill: #808080;
+}
+
+.helper--has-fill-gray-six {
+  fill: #333;
+}
+
+.helper--has-fill-gray-seven {
+  fill: #1f1f1f;
+}
+
+.helper--has-fill-success {
+  fill: #207f33;
+}
+
+.helper--has-fill-success-one {
+  fill: #2aa843;
+}
+
+.helper--has-fill-success-two {
+  fill: #207f33;
+}
+
+.helper--has-fill-success-three {
+  fill: #165623;
+}
+
+.helper--has-fill-success-four {
+  fill: #0b2e12;
+}
+
+.helper--has-fill-danger {
+  fill: #d91620;
+}
+
+.helper--has-fill-danger-one {
+  fill: #f2242f;
+}
+
+.helper--has-fill-danger-two {
+  fill: #d91620;
+}
+
+.helper--has-fill-danger-three {
+  fill: #b3121b;
+}
+
+.helper--has-fill-danger-four {
+  fill: #990b13;
+}
+
+.helper--has-fill-fixed {
+  background-attachment: fixed;
 }
 
 /*# sourceMappingURL=cavilha.css.map */
