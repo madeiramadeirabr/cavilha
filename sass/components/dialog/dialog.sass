@@ -1,0 +1,34 @@
+.dialog
+  $self: &
+  display: none
+
+  &#{$self}--is-open
+    align-content: center
+    align-items: center
+    background-color: $dialog-backdrop-background
+    display: flex
+    height: 100vh
+    justify-content: center
+    width: 100vw
+
+  #{$self}__container
+    +shadow-large
+    background-color: $dialog-container-background
+    border-radius: $radius
+    height: auto
+    width: 560px
+
+  #{$self}__header
+    border-bottom: $dialog-header-separador-border-bottom
+    padding: $size-large
+
+  #{$self}__body
+    padding: $size-large
+
+  #{$self}__footer
+    display: flex
+    justify-content: flex-end
+    padding: $size-large
+
+
+
