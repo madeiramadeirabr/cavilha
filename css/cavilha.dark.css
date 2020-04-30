@@ -2748,6 +2748,96 @@ a.chip {
   border-color: #333;
 }
 
+.dialog {
+  display: none;
+}
+
+.dialog.dialog--is-relative {
+  position: relative !important;
+}
+
+.dialog.dialog--is-open {
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.dialog.dialog--is-transparent {
+  background-color: transparent;
+}
+
+.dialog .dialog__container {
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+  background-color: #fff;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: auto;
+  max-height: 80%;
+  width: 560px;
+}
+
+.dialog.dialog--is-auto-width .dialog__container {
+  width: auto;
+}
+
+.dialog.dialog--is-viewport .dialog__container {
+  border-radius: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  height: 100vh;
+  max-height: 100vh;
+  width: 100vw;
+}
+
+.dialog .dialog__header {
+  border-bottom: solid 1px #e6e6e6;
+  padding: 20px;
+}
+
+.dialog .dialog__header.dialog .dialog__header--has-no-border {
+  border-bottom-width: 0;
+}
+
+.dialog .dialog__body {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.dialog .dialog__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 20px;
+}
+
 .helper--has-background-default {
   background-color: #000;
 }

@@ -2,8 +2,10 @@
   $self: &
   display: none
 
+  &#{$self}--is-relative
+    position: relative !important
+
   &#{$self}--is-open
-    position: absolute
     align-content: center
     align-items: center
     background-color: $dialog-backdrop-background
@@ -11,11 +13,12 @@
     height: 100%
     justify-content: center
     left: 0
+    position: absolute
     top: 0
     width: 100%
     z-index: 2
 
-  &#{$self}--has-no-backdrop
+  &#{$self}--is-transparent
     background-color: transparent
 
   #{$self}__container
@@ -29,7 +32,7 @@
     max-height: 80%
     width: 560px
 
-  &#{$self}--has-auto-width
+  &#{$self}--is-auto-width
     #{$self}__container
       width: auto
 
