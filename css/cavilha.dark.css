@@ -2917,10 +2917,10 @@ a.chip {
 .tab .tab__tabs .tab__item {
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-position: center;
-  border-bottom: solid 2px #ccc;
+  background-color: inherit;
   border-radius: 0;
   border-width: 0;
+  border-bottom: solid 2px #ccc;
   color: #808080;
   cursor: pointer;
   -webkit-box-flex: 1;
