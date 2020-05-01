@@ -10,6 +10,11 @@
   flex-wrap: wrap
   height: 100%
   padding: $zero
+  scrollbar-width: none
+  -ms-overflow-style: -ms-autohiding-scrollbar
+
+  &::-webkit-scrollbar
+    width: 0
 
   +for-size(mobile)
     &--has-horizontal-scroll-mobile

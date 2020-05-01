@@ -1,0 +1,63 @@
+.tab
+  $self: &
+  $item: #{$self + '__item'}
+  +unselectable
+  -ms-overflow-style: none
+  background: inherit
+  display: flex
+  flex-direction: row
+  height: 100%
+  overflow-x: auto
+  padding: $zero
+  scrollbar-width: none
+  width: 100%
+  -ms-overflow-style: -ms-autohiding-scrollbar
+
+  &::-webkit-scrollbar
+    width: 0
+
+  &#{$self}--is-vertical
+    flex-direction: column
+    flex-wrap: wrap
+
+    #{$item}
+      border-bottom-width: $zero
+      border-right: $tab-item-border
+      text-align: left
+
+      &#{$item}--is-active
+        border-bottom-width: $zero
+        border-right: $tab-item-activated-border
+
+  #{$item}
+    background-position: center
+    border-bottom: $tab-item-border
+    color: $tab-item-color
+    cursor: pointer
+    flex-grow: 1
+    flex-shrink: $zero
+    justify-content: center
+    margin: $zero
+    min-width: $tab-item-min-width
+    overflow: hidden
+    padding: $size-regular
+    position: relative
+    text-align: center
+    transition: background $transition-hover $easing, border-bottom $transition-hover $easing
+
+    &:hover
+      background-color: $tab-item-hovered-background
+
+    &#{$item}--is-active
+      background: $tab-item-activated-background
+      border-bottom: $tab-item-activated-border
+      color: $tab-item-activated-color
+      font-weight: $weight-semibold
+
+    &#{$item}--is-disabled
+      background: $tab-item-disabled-background
+      color: $tab-item-disabled-color
+      cursor: not-allowed
+
++for-size(mobile)
+  overflow-x: auto

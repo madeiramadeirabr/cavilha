@@ -8,7 +8,12 @@ $button-size-extra-large: 60px
 =buttons
   height: 100%
   overflow-x: scroll
-  padding: $size-extra-small $zero
+  padding: $zero
+  scrollbar-width: none
+  -ms-overflow-style: -ms-autohiding-scrollbar
+
+  &::-webkit-scrollbar
+    width: 0
 
 .buttons
   +flex-row
@@ -29,6 +34,7 @@ $button-size-extra-large: 60px
 
 .button
   $self: '.button'
+  +unselectable
   -webkit-appearance: none
   -moz-appearance: none
   align-items: center
