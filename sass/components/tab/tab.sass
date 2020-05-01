@@ -1,63 +1,81 @@
 .tab
   $self: &
   $item: #{$self + '__item'}
+  $tabs: #{$self + '__tabs'}
+  $content: #{$self + '__content'}
   +unselectable
-  -ms-overflow-style: none
-  background: inherit
-  display: flex
-  flex-direction: row
-  height: 100%
-  overflow-x: auto
-  padding: $zero
-  scrollbar-width: none
-  width: 100%
-  -ms-overflow-style: -ms-autohiding-scrollbar
 
-  &::-webkit-scrollbar
-    width: 0
+  #{$self}__tabs
+    -ms-overflow-style: none
+    background: inherit
+    display: flex
+    flex-direction: row
+    height: 100%
+    overflow-x: auto
+    padding: $zero
+    scrollbar-width: none
+    width: 100%
+    -ms-overflow-style: -ms-autohiding-scrollbar
+
+    &::-webkit-scrollbar
+      width: 0
 
   &#{$self}--is-vertical
-    flex-direction: column
-    flex-wrap: wrap
+    #{$tabs}
+      flex-direction: column
+      flex-wrap: wrap
 
+      #{$item}
+        border-bottom-width: $zero
+        border-right: $tab-item-border
+        text-align: left
+
+        &#{$item}--is-active
+          border-bottom-width: $zero
+          border-right: $tab-item-activated-border
+
+  #{$tabs}
     #{$item}
-      border-bottom-width: $zero
-      border-right: $tab-item-border
-      text-align: left
+      -webkit-appearance: none
+      -moz-appearance: none
+      background-position: center
+      border-bottom: $tab-item-border
+      border-radius: $zero
+      border-width: $zero
+      color: $tab-item-color
+      cursor: pointer
+      flex-grow: 1
+      flex-shrink: $zero
+      font-size: $font-size-three
+      font-weight: $weight-regular
+      justify-content: center
+      margin: $zero
+      min-width: $tab-item-min-width
+      outline: none !important
+      overflow: hidden
+      padding: $size-regular
+      position: relative
+      text-align: center
+      transition: background $transition-hover $easing, border-bottom $transition-hover $easing
+
+      &:hover
+        background-color: $tab-item-hovered-background
 
       &#{$item}--is-active
-        border-bottom-width: $zero
-        border-right: $tab-item-activated-border
+        background: $tab-item-activated-background
+        border-bottom: $tab-item-activated-border
+        color: $tab-item-activated-color
+        font-weight: $weight-semibold
 
-  #{$item}
-    background-position: center
-    border-bottom: $tab-item-border
-    color: $tab-item-color
-    cursor: pointer
-    flex-grow: 1
-    flex-shrink: $zero
-    justify-content: center
-    margin: $zero
-    min-width: $tab-item-min-width
-    overflow: hidden
-    padding: $size-regular
-    position: relative
-    text-align: center
-    transition: background $transition-hover $easing, border-bottom $transition-hover $easing
+      &#{$item}--is-disabled
+        background: $tab-item-disabled-background
+        color: $tab-item-disabled-color
+        cursor: not-allowed
 
-    &:hover
-      background-color: $tab-item-hovered-background
+  #{$content}
+    display: none
 
-    &#{$item}--is-active
-      background: $tab-item-activated-background
-      border-bottom: $tab-item-activated-border
-      color: $tab-item-activated-color
-      font-weight: $weight-semibold
-
-    &#{$item}--is-disabled
-      background: $tab-item-disabled-background
-      color: $tab-item-disabled-color
-      cursor: not-allowed
-
-+for-size(mobile)
-  overflow-x: auto
+    &#{$content}--is-active
+      display: block
+      heifght: 100%
+      width: 100%

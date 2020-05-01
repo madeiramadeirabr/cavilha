@@ -2870,6 +2870,9 @@ a.chip {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   user-select: none;
+}
+
+.tab .tab__tabs {
   -ms-overflow-style: none;
   background: inherit;
   display: -webkit-box;
@@ -2887,11 +2890,11 @@ a.chip {
   -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
-.tab::-webkit-scrollbar {
+.tab .tab__tabs::-webkit-scrollbar {
   width: 0;
 }
 
-.tab.tab--is-vertical {
+.tab.tab--is-vertical .tab__tabs {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -2900,20 +2903,24 @@ a.chip {
       flex-wrap: wrap;
 }
 
-.tab.tab--is-vertical .tab__item {
+.tab.tab--is-vertical .tab__tabs .tab__item {
   border-bottom-width: 0;
   border-right: solid 2px #ccc;
   text-align: left;
 }
 
-.tab.tab--is-vertical .tab__item.tab__item--is-active {
+.tab.tab--is-vertical .tab__tabs .tab__item.tab__item--is-active {
   border-bottom-width: 0;
   border-right: solid 2px #1b78cd;
 }
 
-.tab .tab__item {
+.tab .tab__tabs .tab__item {
+  -webkit-appearance: none;
+  -moz-appearance: none;
   background-position: center;
   border-bottom: solid 2px #ccc;
+  border-radius: 0;
+  border-width: 0;
   color: #808080;
   cursor: pointer;
   -webkit-box-flex: 1;
@@ -2921,11 +2928,14 @@ a.chip {
           flex-grow: 1;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  font-size: 16px;
+  font-weight: 400;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   margin: 0;
   min-width: 160px;
+  outline: none !important;
   overflow: hidden;
   padding: 12px;
   position: relative;
@@ -2934,25 +2944,31 @@ a.chip {
   transition: background 172ms ease-in, border-bottom 172ms ease-in;
 }
 
-.tab .tab__item:hover {
+.tab .tab__tabs .tab__item:hover {
   background-color: #e6e6e6;
 }
 
-.tab .tab__item.tab__item--is-active {
+.tab .tab__tabs .tab__item.tab__item--is-active {
   background: #e6e6e6;
   border-bottom: solid 2px #1b78cd;
   color: #1b78cd;
   font-weight: 600;
 }
 
-.tab .tab__item.tab__item--is-disabled {
+.tab .tab__tabs .tab__item.tab__item--is-disabled {
   background: #f9f9f9;
   color: #999;
   cursor: not-allowed;
 }
 
-@media (max-width: 600px) {
-  overflow-x: auto;
+.tab .tab__content {
+  display: none;
+}
+
+.tab .tab__content.tab__content--is-active {
+  display: block;
+  heifght: 100%;
+  width: 100%;
 }
 
 .helper--has-background-default {
