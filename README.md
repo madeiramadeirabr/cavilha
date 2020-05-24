@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="300px" src="./docs/logo.jpg">
+  <img width="300px" src="./static/logo.jpg">
 </p>
 
 <h1 align="center">Cavilha CSS</h1>
@@ -45,7 +45,7 @@ You can import individual Cavilha components directly from the `@madeiramadeira/
 ```
 
 ## Development
-See [DEVELOP.md](./docs/DEVELOP.md) for development docs.
+See [DEVELOP.md](./DEVELOP.md) for development docs.
 
 ## License
 
