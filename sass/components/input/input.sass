@@ -24,7 +24,7 @@
 
   &:hover
     #{$self}__marker
-      background: $input-marker-background-hovered
+      background: $input-marker-background-hover
 
   #{$self}__text
     font-size: 16px
@@ -64,13 +64,13 @@
         background-color: $input-marker-background
         border-color: $color-secondary
 
-        &::after // sass-lint:disable-line pseudo-element
+        &::after // sass-lint:disable-line pseudo-element nesting-depth
           display: block
 
-        &:hover
-          background-color: $input-marker-background-hovered
+        &:hover // sass-lint:disable-line nesting-depth
+          background-color: $input-marker-background-hover
 
-        &+ #{$self}__text
+        &+ #{$self}__text // sass-lint:disable-line nesting-depth
           font-weight: $weight-bold
 
     #{$self}__marker
@@ -85,7 +85,7 @@
     &:hover
       input[type='radio'] // sass-lint:disable-line no-qualifying-elements force-attribute-nesting
         &+ #{$self}__marker
-          &::after // sass-lint:disable-line pseudo-element force-pseudo-nesting
+          &::after // sass-lint:disable-line pseudo-element force-pseudo-nesting nesting-depth
             border-radius: 50%
             box-shadow: $zero $zero $zero 2px $input-marker-background
             content: $content

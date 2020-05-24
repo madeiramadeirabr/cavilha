@@ -1,0 +1,36 @@
+=clearfix
+  &::after
+    clear: both
+    content: $content
+    display: table
+
+=border-box
+  box-sizing: border-box !important // sass-lint:disable-line no-important
+
+=unselectable
+  -khtml-user-select: none // sass-lint:disable-line no-vendor-prefixes no-misspelled-properties
+  -moz-user-select: none // sass-lint:disable-line no-vendor-prefixes
+  -ms-user-select: none // sass-lint:disable-line no-vendor-prefixes
+  -webkit-touch-callout: none // sass-lint:disable-line no-vendor-prefixes
+  -webkit-user-select: none // sass-lint:disable-line no-vendor-prefixes
+  user-select: none
+
+%unselectable
+  +unselectable
+
+=optional-at-root($sel)
+  @at-root #{if(not &, $sel, selector-append(&, $sel))}
+    @content
+
+=placeholder
+  +optional-at-root('::-webkit-input-placeholder')
+    @content
+
+  +optional-at-root(':-moz-placeholder')
+    @content
+
+  +optional-at-root('::-moz-placeholder')
+    @content
+
+  +optional-at-root(':-ms-input-placeholder')
+    @content

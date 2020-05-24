@@ -1,0 +1,246 @@
+@import '../variables/text'
+
++placeholder
+  opacity: $zero
+  transition: $transition-low ease opacity
+
+html
+  -moz-osx-font-smoothing: grayscale // sass-lint:disable-line no-vendor-prefixes
+  -webkit-font-smoothing: antialiased // sass-lint:disable-line no-vendor-prefixes
+  min-width: $body-min-width
+  overflow-x: $body-overflow-x
+  overflow-y: $body-overflow-y
+  text-rendering: $body-rendering
+  text-size-adjust: 100%
+
+body,
+button,
+input,
+select,
+textarea,
+span,
+small,
+strong,
+i
+  +border-box
+  color: currentColor
+
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+section
+  +border-box
+  display: block
+
+div
+  +border-box
+  display: block
+
+code,
+pre
+  -moz-osx-font-smoothing: auto // sass-lint:disable-line no-vendor-prefixes
+  -webkit-font-smoothing: auto // sass-lint:disable-line no-vendor-prefixes
+  font-family: $family-monospace
+
+body
+  background-color: $color-background
+  color: $color-text
+  font-family: $family-sans-serif
+  font-size: $text-body-one-regular-size
+  font-weight: $text-body-one-regular-weight
+  letter-spacing: $text-body-one-regular-letter-spacing
+  line-height: $text-body-one-regular-line-height
+  margin: $zero
+  overflow-x: hidden
+  padding: $zero
+
+a,
+.link
+  +border-box
+  color: $link-color
+  cursor: pointer
+  text-decoration: none
+
+  strong,
+  i
+    color: currentColor
+
+  &.link--is-hover,
+  &:hover,
+  &:active
+    color: $link-color-hover
+    text-decoration: underline
+
+  &.link--is-active
+    color: $link-color-active !important
+    font-weight: $weight-semibold
+    pointer-events: none
+
+  &.link--is-visited,
+  &:visited
+    color: $link-color-visited
+
+hr
+  +clearfix
+  box-sizing: content-box
+  height: $zero
+  overflow: auto
+
+img
+  height: auto
+  width: 100%
+
+input[type='checkbox'], // sass-lint:disable-line no-qualifying-elements force-attribute-nesting
+input[type='radio'] // sass-lint:disable-line no-qualifying-elements force-attribute-nesting
+  vertical-align: baseline
+
+button,
+textarea,
+select,
+input
+  +border-box
+  outline: none
+
+small
+  color: currentColor
+  font-size: $text-body-one-regular-size
+  font-weight: $text-body-one-regular-weight
+  letter-spacing: $text-body-one-regular-letter-spacing
+  line-height: $text-body-one-regular-line-height
+
+span
+  font-style: inherit
+  font-weight: inherit
+
+strong
+  font-weight: $weight-bold
+
+fieldset
+  border-width: $zero
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p
+  +border-box
+  +clearfix
+  color: currentColor
+  display: inline-block
+  margin: $zero
+  padding: $zero
+  width: 100%
+
+
+h1
+  font-size: $heading-one-desktop-size
+  font-weight: $weight-light
+  letter-spacing: $heading-one-desktop-letter-spacing
+  line-height: $heading-one-desktop-line-height
+  min-height: $heading-one-desktop-line-height
+
+  &.h1--is-hero
+    font-size: $heading-one-hero-desktop-size
+    letter-spacing: $heading-one-hero-desktop-letter-spacing
+    line-height: $heading-one-hero-desktop-line-height
+    min-height: $heading-one-hero-desktop-line-height
+
+  +for-size(mobile)
+    font-size: $heading-one-mobile-size
+    letter-spacing: $heading-one-mobile-letter-spacing
+    line-height: $heading-one-mobile-line-height
+    min-height: $heading-one-mobile-line-height
+
+    &.h2--is-hero
+      font-size: $heading-one-hero-mobile-size
+      letter-spacing: $heading-one-hero-mobile-letter-spacing
+      line-height: $heading-one-hero-mobile-line-height
+      min-height: $heading-one-hero-mobile-line-height
+
+h2
+  font-size: $heading-two-desktop-size
+  font-weight: $weight-light
+  letter-spacing: $heading-two-desktop-letter-spacing
+  line-height: $heading-two-desktop-line-height
+  min-height: $heading-two-desktop-line-height
+
+  +for-size(mobile)
+    font-size: $heading-two-mobile-size
+    letter-spacing: $heading-two-mobile-letter-spacing
+    line-height: $heading-two-mobile-line-height
+    min-height: $heading-two-mobile-line-height
+
+h3
+  font-size: $heading-three-desktop-size
+  font-weight: $weight-light
+  letter-spacing: $heading-three-desktop-letter-spacing
+  line-height: $heading-three-desktop-line-height
+  min-height: $heading-three-desktop-line-height
+
+  +for-size(mobile)
+    font-size: $heading-three-mobile-size
+    letter-spacing: $heading-three-mobile-letter-spacing
+    line-height: $heading-three-mobile-line-height
+    min-height: $heading-three-mobile-line-height
+
+h4
+  font-size: $heading-four-size
+  font-weight: $weight-light
+  letter-spacing: $heading-four-letter-spacing
+  line-height: $heading-four-line-height
+  min-height: $heading-four-line-height
+
+h5
+  font-size: $heading-five-size
+  font-weight: $weight-light
+  letter-spacing: $heading-five-letter-spacing
+  line-height: $heading-five-line-height
+  min-height: $heading-five-line-height
+
+p
+  font-size: $text-body-one-regular-size
+  font-weight: $text-body-one-regular-weight
+  letter-spacing: $text-body-one-regular-letter-spacing
+  line-height: $text-body-one-regular-line-height
+  min-height: $text-body-one-regular-line-height
+
+pre
+  +clearfix
+  margin: $zero !important // sass-lint:disable-line no-important
+  overflow-x: auto
+  padding: $size-regular !important // sass-lint:disable-line no-important
+  white-space: pre
+  word-wrap: normal
+
+  &:after // sass-lint:disable-line pseudo-element
+    content: $content
+    display: none
+
+.code
+  background-color: $code-background
+  border: solid 1px $code-border
+  border-radius: $radius
+  color: $color-text
+  display: inline-block
+  font-size: 12px
+  line-height: 12px
+  padding: #{$size-extra-small / 2} $size-extra-small
+  white-space: nowrap
+
+table
+  td,
+  th
+    vertical-align: top
+
+    &:not([align])
+      text-align: left
+
+svg
+  path
+    &:not([fill])
+      fill: currentColor

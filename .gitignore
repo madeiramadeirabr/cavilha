@@ -1,14 +1,14 @@
-# dependencies
+*.log
+*.tgz
+.DS_Store
+.cache/
+.changelog/
 /node_modules
 /.pnp
 /docs
 /dev
 .pnp.js
-
-# misc
 .DS_Store
-
-# local
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

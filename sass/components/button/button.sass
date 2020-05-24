@@ -1,18 +1,11 @@
-$button-size-extra-small: 24px
-$button-size-small: 32px
-$button-size-regular: 40px
-$button-size-large: 48px
-$button-size-extra-large: 60px
-
-
 =buttons
+  -ms-overflow-style: -ms-autohiding-scrollbar // sass-lint:disable-line no-vendor-prefixes
   height: 100%
   overflow-x: scroll
   padding: $zero
-  scrollbar-width: none
-  -ms-overflow-style: -ms-autohiding-scrollbar
+  scrollbar-width: none // sass-lint:disable-line no-misspelled-properties
 
-  &::-webkit-scrollbar
+  &::-webkit-scrollbar // sass-lint:disable-line no-vendor-prefixes
     width: 0
 
 .buttons
@@ -25,18 +18,18 @@ $button-size-extra-large: 60px
     +buttons
 
   .button
-    &:not(.button--is-square):not(.button--is-circle)
+    &:not(.button--is-square):not(.button--is-circle) // sass-lint:disable-line force-pseudo-nesting nesting-depth
       min-width: 140px
 
-      &:not(:last-child) // sass-lint:disable-line force-pseudo-nesting
+      &:not(:last-child) // sass-lint:disable-line force-pseudo-nesting nesting-depth
         margin-right: $size-regular
 
 
 .button
   $self: '.button'
   +unselectable
-  -webkit-appearance: none
-  -moz-appearance: none
+  -moz-appearance: none // sass-lint:disable-line no-vendor-prefixes
+  -webkit-appearance: none // sass-lint:disable-line no-vendor-prefixes
   align-items: center
   background-color: transparent
   background-position: center
@@ -54,13 +47,13 @@ $button-size-extra-large: 60px
   letter-spacing: $text-button-letter-spacing
   line-height: $text-button-line-height
   max-width: auto
-  outline: none !important
-  padding: $zero $size-regular
+  outline: none !important // sass-lint:disable-line no-important
+  padding: $button-gap
   transition: border-color $transition $easing, color $transition $easing, background $transition-click $easing
   white-space: nowrap
   width: auto
 
-  &:not(:only-child):not(:last-child)
+  &:not(:only-child):not(:last-child) // sass-lint:disable-line force-pseudo-nesting
     margin-right: $size-regular
 
   &#{$self}--is-extra-small
@@ -95,43 +88,43 @@ $button-size-extra-large: 60px
 
   &#{$self}--is-hover,
   &:hover
-    background: map-get($button-background-hovered-map, default)
+    background: map-get($button-background-hover, default)
 
   &#{$self}--is-active,
   &:active
     +shadow-extra-small
-    background: map-get($button-background-hovered-map, default)
+    background: map-get($button-background-hover, default)
 
   &:disabled,
-  &#{$self}--is-disabled
-    color: map-get($button-color-disabled-map, default)
+  &#{$self}--is-disable
+    color: map-get($button-color-disable, default)
     cursor: not-allowed
     pointer-events: none
 
   &#{$self}--is-outline
-    border-color: map-get($button-outlined-border-map, default)
+    border-color: map-get($button-outline-border, default)
 
     &:hover,
     &:focus,
     &:active
-      border-color: map-get($button-outlined-border-map, default)
+      border-color: map-get($button-outline-border, default)
 
     &:disabled,
-    &#{ $self }--is-disabled
-      border-color: map-get($button-outlined-border-disabled-map, default)
-      color: map-get($button-outlined-color-disabled-map, default)
+    &#{ $self }--is-disable
+      border-color: map-get($button-outline-border-disable, default)
+      color: map-get($button-outline-color-disable, default)
 
   &#{$self}--is-link
     color: $color-secondary
     text-decoration: underline
 
-    &#{ $self }--is-disabled
-      color: map-get($button-outlined-color-disabled-map, default)
+    &#{ $self }--is-disable
+      color: map-get($button-outline-color-disable, default)
 
   &#{$self}--is-square,
   &#{$self}--is-circle
     max-width: auto
-    padding: $zero !important
+    padding: $zero !important // sass-lint:disable-line no-important
     width: $button-size-regular
 
     &#{$self}--is-extra-small
@@ -160,47 +153,47 @@ $button-size-extra-large: 60px
   &#{$self}--is-circle
     border-radius: 50%
 
-  @each $color, $value in $button-background-map
+  @each $color, $value in $button-background
     &#{$self}--is-#{ $color }
       +shadow-small
       background-color: $value
-      color: map-get($button-color-map, $color)
+      color: map-get($button-color, $color)
 
       &#{ $self }--is-hover,
       &#{ $self }--is-active,
       &:active,
       &:hover
-        background-color: map-get($button-background-hovered-map, $color)
+        background-color: map-get($button-background-hover, $color)
 
       &#{ $self }--is-active,
       &:active
         +shadow-extra-small
 
       &:disabled,
-      &#{ $self }--is-disabled
-        background-color: map-get($button-background-disabled-map, $color)
-        border-color: map-get($button-border-disabled-map, $color)
+      &#{ $self }--is-disable
+        background-color: map-get($button-background-disable, $color)
+        border-color: map-get($button-border-disable, $color)
 
       &#{ $self }--is-outline
         background-color: transparent
-        border-color: map-get($button-outlined-border-map, $color)
+        border-color: map-get($button-outline-border, $color)
         box-shadow: none
-        color: map-get($button-outlined-color-map, $color)
+        color: map-get($button-outline-color, $color)
 
         &#{ $self }--is-hover,
         &:hover
-          background-color: map-get($button-outlined-background-hovered-map, $color)
+          background-color: map-get($button-outline-background-hover, $color)
 
         &#{ $self }--is-active,
         &:active,
         &:focus
-          background-color: map-get($button-outlined-background-actived-map, $color)
+          background-color: map-get($button-outline-background-active, $color)
           box-shadow: none
-          color: map-get($button-outlined-color-focused-map, $color)
+          color: map-get($button-outline-color-focus, $color)
 
         &:disabled,
-        &#{ $self }--is-disabled
+        &#{ $self }--is-disable
           background-color: transparent
-          border-color: map-get($button-outlined-border-disabled-map, $color)
-          color: map-get($button-outlined-color-disabled-map, $color)
+          border-color: map-get($button-outline-border-disable, $color)
+          color: map-get($button-outline-color-disable, $color)
 

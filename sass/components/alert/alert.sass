@@ -1,9 +1,9 @@
 .alert
   $self: &
   align-items: center
-  background-color: map-get($alert-background-map, default)
+  background-color: map-get($alert-background, default)
   border-radius: $radius
-  color: map-get($alert-color-map, default)
+  color: map-get($alert-color, default)
   cursor: default
   display: flex
   flex-direction: row
@@ -17,8 +17,8 @@
     margin-top: $size-regular
 
   &:hover
-    background-color: map-get($alert-background-hovered-map, default)
-    border-color: map-get($alert-background-hovered-map, default)
+    background-color: map-get($alert-background-hover, default)
+    border-color: map-get($alert-background-hover, default)
     text-decoration: none
 
   #{$self}__content
@@ -27,13 +27,14 @@
     line-height: $font-size-three
 
   #{$self}__icon
-    width: 40px
     font-size: $font-size-two
     line-height: $font-size-three
+    width: 40px
 
   #{$self}__close
-    -webkit-appearance: none
-    -moz-appearance: none
+    -moz-appearance: none // sass-lint:disable-line no-vendor-prefixes
+    -webkit-appearance: none // sass-lint:disable-line no-vendor-prefixes
+    appearance: none
     background-color: transparent
     border-width: $zero
     box-shadow: none
@@ -46,12 +47,12 @@
     outline: none
     padding: $zero
 
-  @each $color, $value in $alert-background-map
+  @each $color, $value in $alert-background
     &#{$self}--is-#{ $color }
       background-color: $value
-      border-color: map-get($alert-border-map, $color)
-      color: map-get($alert-color-map, $color)
+      border-color: map-get($alert-border, $color)
+      color: map-get($alert-color, $color)
 
       &:hover
-        background-color: map-get($alert-background-hovered-map, $color)
-        border-color: map-get($alert-background-hovered-map, $color)
+        background-color: map-get($alert-background-hover, $color)
+        border-color: map-get($alert-background-hover, $color)

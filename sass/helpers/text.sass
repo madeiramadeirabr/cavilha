@@ -33,6 +33,15 @@
     &-lower
       text-transform: lowercase
 
+    &-italic
+      font-style: italic
+
+    &-truncated
+      display: block
+      overflow: hidden
+      text-overflow: ellipsis
+      white-space: nowrap
+
     +for-size(mobile)
       &-left-mobile
         text-align: left
@@ -58,18 +67,6 @@
 
       &-justify-tablet
         text-align: justify
-
-    &-upper
-      text-transform: uppercase
-
-    &-italic
-      font-style: italic
-
-    &-truncated
-      display: block
-      overflow: hidden
-      text-overflow: ellipsis
-      white-space: nowrap
 
   &--has-color
     &-default

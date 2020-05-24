@@ -1,9 +1,9 @@
 .badge
   $self: &
-  background-color: map-get($badge-background-map, default)
-  border: solid 1px map-get($badge-border-map, default)
+  background-color: map-get($badge-background, default)
+  border: solid 1px map-get($badge-border, default)
   border-radius: $radius
-  color: map-get($badge-color-map, default)
+  color: map-get($badge-color, default)
   cursor: default
   display: inline
   font-size: calc(100% - #{$size-extra-small + 1})
@@ -27,21 +27,10 @@
     min-width: 20px
     padding: $size-extra-small
 
-  @each $color, $value in $badge-background-map
-    &#{$self}--is-#{ $color }
-      background-color: $value
-      border-color: map-get($badge-border-map, $color)
-      color: map-get($badge-color-map, $color)
-
-      &#{$self}--is-outline
-        background-color: map-get($badge-background-outline-map, $color)
-        border-color: map-get($badge-border-outline-map, $color)
-        color: map-get($badge-color-outline-map, $color)
-
   &#{$self}--is-outline
-    background-color: map-get($badge-background-outline-map, default)
-    border-color: map-get($badge-color-outline-map, default)
-    color: map-get($badge-color-outline-map, default)
+    background-color: map-get($badge-outline-background, default)
+    border-color: map-get($badge-outline-color, default)
+    color: map-get($badge-outline-color, default)
 
   &#{$self}--is-floating
     cursor: inherit
@@ -49,3 +38,13 @@
     right: -#{$base}
     top: -#{$base}
 
+  @each $color, $value in $badge-background
+    &#{$self}--is-#{ $color }
+      background-color: $value
+      border-color: map-get($badge-border, $color)
+      color: map-get($badge-color, $color)
+
+      &#{$self}--is-outline
+        background-color: map-get($badge-outline-background, $color)
+        border-color: map-get($badge-outline-border, $color)
+        color: map-get($badge-outline-color, $color)

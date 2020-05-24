@@ -1,17 +1,17 @@
-span.chip,
-div.chip
+span.chip, // sass-lint:disable-line no-qualifying-elements force-element-nesting
+div.chip // sass-lint:disable-line no-qualifying-elements force-element-nesting
   cursor: default
 
-a.chip
-  color: map-get($chip-color-map, default)
+a.chip // sass-lint:disable-line no-qualifying-elements force-element-nesting
+  color: map-get($chip-color, default)
   cursor: pointer
 
 .chip
   $self: &
-  background-color: map-get($chip-background-map, default)
-  border: solid 2px map-get($chip-border-map, default)
+  background-color: map-get($chip-background, default)
+  border: solid 2px map-get($chip-border, default)
   border-radius: 40px
-  color: map-get($chip-color-map, default)
+  color: map-get($chip-color, default)
   display: inline
   font-size: $font-size-two
   line-height: $font-size-three
@@ -23,13 +23,14 @@ a.chip
   word-wrap: nowrap
 
   &:hover
-    background-color: map-get($chip-background-hovered-map, default)
-    border-color: map-get($chip-background-hovered-map, default)
+    background-color: map-get($chip-background-hover, default)
+    border-color: map-get($chip-background-hover, default)
     text-decoration: none
 
   #{$self}__close
-    -webkit-appearance: none
-    -moz-appearance: none
+    -moz-appearance: none // sass-lint:disable-line no-vendor-prefixes
+    -webkit-appearance: none // sass-lint:disable-line no-vendor-prefixes
+    appearance: none
     background-color: transparent
     border-width: $zero
     box-shadow: none
@@ -48,30 +49,30 @@ a.chip
   &:first-of-type
     margin-left: $zero
 
-  @each $color, $value in $chip-background-map
-    &#{$self}--is-#{ $color }
-      background-color: $value
-      border-color: map-get($chip-border-map, $color)
-      color: map-get($chip-color-map, $color)
-
-      &:hover
-        background-color: map-get($chip-background-hovered-map, $color)
-        border-color: map-get($chip-background-hovered-map, $color)
-
-      &#{$self}--is-outline
-        background-color: map-get($chip-background-outline-map, $color)
-        border-color: map-get($chip-border-outline-map, $color)
-        color: map-get($chip-color-outline-map, $color)
-
-        &:hover
-          border-color: map-get($chip-border-outline-hovered-map, $color)
-          color: map-get($chip-color-outline-hovered-map, $color)
-
   &#{$self}--is-outline
-    background-color: map-get($chip-background-outline-map, default)
-    border-color: map-get($chip-border-outline-map, default)
-    color: map-get($chip-color-outline-map, default)
+    background-color: map-get($chip-background-outline, default)
+    border-color: map-get($chip-border-outline, default)
+    color: map-get($chip-color-outline, default)
 
     &:hover
-      border-color: map-get($chip-border-outline-hovered-map, default)
-      color: map-get($chip-color-outline-hovered-map, default)
+      border-color: map-get($chip-border-outline-hover, default)
+      color: map-get($chip-color-outline-hover, default)
+
+  @each $color, $value in $chip-background
+    &#{$self}--is-#{ $color }
+      background-color: $value
+      border-color: map-get($chip-border, $color)
+      color: map-get($chip-color, $color)
+
+      &:hover
+        background-color: map-get($chip-background-hover, $color)
+        border-color: map-get($chip-background-hover, $color)
+
+      &#{$self}--is-outline
+        background-color: map-get($chip-background-outline, $color)
+        border-color: map-get($chip-border-outline, $color)
+        color: map-get($chip-color-outline, $color)
+
+        &:hover
+          border-color: map-get($chip-border-outline-hover, $color)
+          color: map-get($chip-color-outline-hover, $color)

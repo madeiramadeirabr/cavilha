@@ -18,7 +18,7 @@
       vertical-align: middle
       width: 100%
 
-      &:first-child
+      &:first-child // sass-lint:disable-line nesting-depth
         white-space: nowrap
         width: auto
         word-wrap: nowrap
@@ -27,10 +27,10 @@
     tr
       background-color: $table-row-background
 
-      &:hover
-        background-color: $table-row-background-hovered
+      &:hover // sass-lint:disable-line nesting-depth
+        background-color: $table-row-background-hover
 
-      &:last-child
+      &:last-child // sass-lint:disable-line nesting-depth
         td
           border-bottom-width: $zero
 
@@ -40,7 +40,7 @@
       vertical-align: middle
       width: 100%
 
-      &:first-child
+      &:first-child // sass-lint:disable-line nesting-depth
         white-space: nowrap
         width: auto
         word-wrap: nowrap
@@ -62,6 +62,7 @@
 
   &--is-clean
     border-width: $zero
+
     thead
       th
         border-bottom-width: $zero

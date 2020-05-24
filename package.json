@@ -2,18 +2,20 @@
   "name": "@madeiramadeira/cavilha",
   "version": "0.1.0",
   "description": "Cavilha is an UI KIT of components with MadeiraMadeira brand",
+  "homepage": "https://github.com/madeiramadeirabr/cavilha#readme",
   "private": false,
+  "style": "css/cavilha.css",
+  "sass": "cavilha.sass",
   "scripts": {
-    "sass-build-autoprefix": "postcss --use=autoprefixer --map false --output css/cavilha.css css/cavilha.css && postcss --use=autoprefixer --map false --output css/cavilha.dark.css css/cavilha.dark.css",
-    "sass-build-cleancss": "cleancss -o css/cavilha.min.css css/cavilha.css && cleancss -o css/cavilha.dark.min.css css/cavilha.dark.css",
+    "fresh": "rm -rf node_modules && rm -rf packages-lock.json && npm install",
+    "sass-build-autoprefix": "postcss --use=autoprefixer --map false --output css/cavilha.css css/cavilha.css",
+    "sass-build-cleancss": "cleancss -o css/cavilha.min.css css/cavilha.css",
     "sass-build-clean": "rimraf css",
-    "sass-build-sass": "node-sass --output-style expanded cavilha.sass css/cavilha.css && node-sass --output-style expanded cavilha.dark.sass css/cavilha.dark.css",
-    "sass-watch-sass:default": "node-sass --output-style expanded cavilha.sass dev/cavilha.css",
-    "deploy": "npm run sass-build-clean && npm run sass-build-sass && npm run sass-build-autoprefix && npm run sass-build-cleancss",
-    "start": "npm run sass-watch-sass:default && npm run sass-watch-sass:default -- --watch",
-    "linter": "sass-lint -c .sass-lint.yml 'sass/**/*.sass' -v -q",
-    "version": "git add -A .",
-    "postversion": "git push && git push --tags"
+    "sass-build-sass": "node-sass --output-style expanded sass/index.sass css/cavilha.css",
+    "dist": "npm run sass-build-clean && npm run sass-build-sass && npm run sass-build-autoprefix && npm run sass-build-cleancss",
+    "start": "npm run sass-build-sass && npm run sass-build-sass -- --watch",
+    "dev": "npm start",
+    "linter": "sass-lint -c .sass-lint.yml 'sass/**/*.sass' -v -q"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.4",
@@ -21,7 +23,6 @@
     "css-loader": "^3.4.2",
     "cssnano": "^4.1.10",
     "eslint": "^6.8.0",
-    "gulp": "^4.0.2",
     "node-sass": "^4.13.1",
     "postcss-cli": "^7.1.0",
     "rimraf": "^3.0.2",
@@ -31,6 +32,7 @@
     "type": "git",
     "url": "git+https://github.com/madeiramadeirabr/cavilha.git"
   },
+
   "keywords": [
     "sass",
     "css",
@@ -42,13 +44,9 @@
   "bugs": {
     "url": "https://github.com/madeiramadeirabr/cavilha/issues"
   },
-  "homepage": "https://github.com/madeiramadeirabr/cavilha#readme",
   "files": [
-    "public",
-    "sass",
-    "README.md",
-    "cavilha.sass",
-    "cavilha.dark.sass"
+    "css",
+    "sass"
   ],
   "browserslist": [
     "last 2 versions",

@@ -1,0 +1,9 @@
+=keyframes($name)
+  @-webkit-keyframes #{$name} // sass-lint:disable-line no-vendor-prefixes
+    @content
+  @-moz-keyframes #{$name} // sass-lint:disable-line no-vendor-prefixes
+    @content
+  @-ms-keyframes #{$name} // sass-lint:disable-line no-vendor-prefixes
+    @content
+  @keyframes #{$name}
+    @content

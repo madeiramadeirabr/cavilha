@@ -1,109 +1,108 @@
-@import './variables'
-@import '../../mixins'
+@import '../../variables/grid'
 
+.grid
+  &__row
+    $row: &
+    +border-box
+    display: flex
+    flex-direction: row
+    flex-flow: row wrap
+    flex-wrap: wrap
+    height: max-content
+    padding: $zero
+    scrollbar-width: none
+    -ms-overflow-style: -ms-autohiding-scrollbar // sass-lint:disable-line no-vendor-prefixes
 
-.grid__row
-  +border-box
-  display: flex
-  flex-direction: row
-  flex-flow: row wrap
-  flex-wrap: wrap
-  height: 100%
-  padding: $zero
-  scrollbar-width: none
-  -ms-overflow-style: -ms-autohiding-scrollbar
+    &::-webkit-scrollbar // sass-lint:disable-line no-vendor-prefixes
+      width: 0
 
-  &::-webkit-scrollbar
-    width: 0
+    &#{$row}--is-reverse
+      flex-direction: row-reverse
 
-  +for-size(mobile)
-    &--has-horizontal-scroll-mobile
-      -webkit-overflow-scrolling: touch
-      flex-flow: row
-      flex-wrap: nowrap
-      overflow-x: auto
-      overflow-y: hidden
-      padding: $size-small $zero
-      scroll-behavior: smooth
+    +for-size(desktop)
+      margin-left: -$desktop-column-gap
+      margin-right: -$desktop-column-gap
+      width: calc(100% + #{$desktop-column-gap * 2})
 
-      &::-webkit-scrollbar
-        display: none
-
-      .grid__column
-        flex: 0 0 auto
-
-  &--is-reverse
-    flex-direction: row-reverse
-
-  +for-size(desktop)
-    margin-left: -$desktop-column-gap
-    margin-right: -$desktop-column-gap
-    width: calc(100% + #{$desktop-column-gap * 2})
-
-  +for-size(tablet)
-    margin-left: -$tablet-column-gap
-    margin-right: -$tablet-column-gap
-    width: calc(100% + #{$tablet-column-gap * 2})
-
-  +for-size(mobile)
-    margin-left: -$mobile-column-gap
-    margin-right: -$mobile-column-gap
-    width: calc(100% + #{$mobile-column-gap * 2})
-
-.grid__column
-  $column: &
-  flex: 1 0
-  height: 100%
-  margin-left: $desktop-column-gap
-  margin-right: $desktop-column-gap
-
-  > .grid__row
-    width: calc(100% + #{$desktop-column-gap * 2})
-
-  &#{$column}--is-first
-    order: -1
-
-  &#{$column}--is-last
-    order: 1
-
-  +for-size(desktop)
-    @each $name, $count in $percentages
-      &#{$column}--is-#{$name}
-        flex-basis: calc(#{$count} - #{$desktop-column-gap * 2})
-        width: calc(#{$count} - #{$desktop-column-gap * 2})
-
-  +for-size(tablet)
-    margin-left: $tablet-column-gap
-    margin-right: $tablet-column-gap
-
-    > .grid__row
+    +for-size(tablet)
+      margin-left: -$tablet-column-gap
+      margin-right: -$tablet-column-gap
       width: calc(100% + #{$tablet-column-gap * 2})
 
-    &--is-first
-      order: -1
-
-    &--is-last
-      order: 1
-
-    @each $name, $count in $percentages
-      &#{$column}--is-#{$name}-tablet
-        flex-basis: calc(#{$count} - #{$tablet-column-gap * 2})
-        width: calc(#{$count} - #{$tablet-column-gap * 2})
-
-  +for-size(mobile)
-    margin-left: $mobile-column-gap
-    margin-right: $mobile-column-gap
-
-    > .grid__row
+    +for-size(mobile)
+      margin-left: -$mobile-column-gap
+      margin-right: -$mobile-column-gap
       width: calc(100% + #{$mobile-column-gap * 2})
 
-    &--is-first-mobile
+      &--has-horizontal-scroll-mobile
+        -webkit-overflow-scrolling: touch // sass-lint:disable-line no-vendor-prefixes
+        flex-flow: row
+        flex-wrap: nowrap
+        overflow-x: auto
+        overflow-y: hidden
+        padding: $size-small $zero
+        scroll-behavior: smooth
+
+        &::-webkit-scrollbar // sass-lint:disable-line no-vendor-prefixes
+          display: none
+
+        .grid__column
+          flex: 0 0 auto
+
+  &__column
+    $column: &
+    flex: 1 0
+    height: 100%
+    margin-left: $desktop-column-gap
+    margin-right: $desktop-column-gap
+
+    > .grid__row // sass-lint:disable-line class-name-format
+      width: calc(100% + #{$desktop-column-gap * 2})
+
+    &#{$column}--is-first
       order: -1
 
-    &--is-last-mobile
+    &#{$column}--is-last
       order: 1
 
-    @each $name, $count in $percentages
-      &--is-#{$name}-mobile
-        flex-basis: calc(#{$count} - #{$mobile-column-gap * 2})
-        width: calc(#{$count} - #{$mobile-column-gap * 2})
+    +for-size(desktop)
+      @each $name, $count in $percentages
+        &#{$column}--is-#{$name}
+          flex-basis: calc(#{$count} - #{$desktop-column-gap * 2})
+          width: calc(#{$count} - #{$desktop-column-gap * 2})
+
+    +for-size(tablet)
+      margin-left: $tablet-column-gap
+      margin-right: $tablet-column-gap
+
+      > .grid__row
+        width: calc(100% + #{$tablet-column-gap * 2})
+
+      &--is-first
+        order: -1
+
+      &--is-last
+        order: 1
+
+      @each $name, $count in $percentages
+        &#{$column}--is-#{$name}-tablet
+          flex-basis: calc(#{$count} - #{$tablet-column-gap * 2})
+          width: calc(#{$count} - #{$tablet-column-gap * 2})
+
+    +for-size(mobile)
+      margin-left: $mobile-column-gap
+      margin-right: $mobile-column-gap
+
+      > .grid__row
+        width: calc(100% + #{$mobile-column-gap * 2})
+
+      &--is-first-mobile
+        order: -1
+
+      &--is-last-mobile
+        order: 1
+
+      @each $name, $count in $percentages
+        &--is-#{$name}-mobile
+          flex-basis: calc(#{$count} - #{$mobile-column-gap * 2})
+          width: calc(#{$count} - #{$mobile-column-gap * 2})
