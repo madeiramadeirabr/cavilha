@@ -8,16 +8,16 @@
 
 <p align="center">
   <a aria-label="npm package" href="https://www.npmjs.com/package/@madeiramadeira/cavilha">
-    <img alt="" src="https://img.shields.io/npm/v/@madeiramadeirabr/cavilha/.svg">
+    <img alt="" src="https://img.shields.io/npm/v/@madeiramadeirabr/cavilha.svg">
   </a>
   <a aria-label="contributors graph" href="https://github.com/madeiramadeirabr/cavilha/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/madeiramadeirabr/cavilha/.svg">
+    <img alt="" src="https://img.shields.io/github/contributors/madeiramadeirabr/cavilha.svg">
   </a>
-  <a aria-label="last commit" href="https://github.com/madeiramadeirabr/cavilha//commits/master">
-    <img alt="" src="https://img.shields.io/github/last-commit/madeiramadeirabr/cavilha/.svg">
+  <a aria-label="last commit" href="https://github.com/madeiramadeirabr/cavilha/commits/master">
+    <img alt="" src="https://img.shields.io/github/last-commit/madeiramadeirabr/cavilha.svg">
   </a>
-  <a aria-label="license" href="https://github.com/madeiramadeirabr/cavilha//blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/madeiramadeirabr/cavilha/.svg" alt="">
+  <a aria-label="license" href="https://github.com/madeiramadeirabr/cavilha/blob/master/LICENSE">
+    <img alt="" src="https://img.shields.io/github/license/madeiramadeirabr/cavilha.svg">
   </a>
 </p>
 
